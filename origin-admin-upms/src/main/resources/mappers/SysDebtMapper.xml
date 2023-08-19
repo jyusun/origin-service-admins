@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jyusun.origin.admin.upms.repository.dal.mapper.SysDebtMapper">
+
+    <!-- 树模型结果 -->
+    <resultMap id="tree_result" type="com.jyusun.origin.admin.upms.interfaces.facade.model.dto.SysDebtTreeValue">
+        <id column="sid" property="sid"/>
+        <result column="oname" property="oname"/>
+        <result column="ocode" property="ocode"/>
+        <result column="sname" property="sname"/>
+        <result column="sort" property="sort"/>
+        <result column="parent_id" property="parentId"/>
+        <result column="tenant_id" property="tenantId"/>
+        <result column="tree_type" property="treeType"/>
+
+        <result column="update_by" property="updateBy"/>
+        <result column="update_time" property="updateTime"/>
+        <result column="remarks" property="remarks"/>
+
+        <collection property="children" javaType="java.util.ArrayList"
+                    ofType="com.jyusun.origin.admin.upms.interfaces.facade.model.dto.SysDebtTreeValue"
+                    column="sid" select="listTree"/>
+    </resultMap>
+
+    <!-- 树模型结果 -->
+    <resultMap id="comp_debt_result" type="com.jyusun.origin.admin.upms.interfaces.facade.model.dto.SysCompDebtDTO">
+        <id column="sid" property="sid"/>
+        <result column="oname" property="oname"/>
+        <result column="ocode" property="ocode"/>
+        <result column="sname" property="sname"/>
+        <result column="sort" property="sort"/>
+        <result column="tree_type" property="treeType"/>
+        <collection property="children" javaType="java.util.ArrayList"
+                    ofType="com.jyusun.origin.admin.upms.interfaces.facade.model.dto.SysDebtTreeValue"
+                    column="sid" select="listDebtByComp"/>
+    </resultMap>
+
+    <!-- 基础列 -->
+    <sql id="base_column">
+        oname
+        ,
+        ocode,
+        sname,
+        sort,
+        parent_id,
+        tenant_id,
+        '2' as tree_type,
+        sid,
+        update_by,
+        update_time,
+        remarks
+    </sql>
+
+    <!-- 树形结构查询 -->
+    <select id="pageTrees" resultMap="comp_debt_result">
+        select
+        tsc.sid,
+        tsc.oname,
+        tsc.ocode,
+        tsc.sname,
+        tsc.sort,
+        '1' as tree_type
+        from t002_sys_comp tsc
+        <where>
+            <if test="query.compId != null and query.compId !=0">
+                tsc.sid = #{query.compId}
+            </if>
+        </where>
+    </select>
+
+    <!-- 树形结构查询: 根据租户查询部门数据 -->
+    <select id="listDebtByComp" resultMap="tree_result">
+        select
+        <include refid="base_column"/>
+        from t001_sys_debt tsd
+        <where>
+            tsd.tenant_id = #{sid}
+            and tsd.parent_id = 0
+        </where>
+        order by tsd.sort asc
+    </select>
+
+    <!-- 树形结构查询：顶级部门查询 -->
+    <select id="listTree" resultMap="tree_result">
+        select
+        <include refid="base_column"/>
+        from t001_sys_debt tsd
+        <where>
+            tsd.parent_id = #{parentId}
+        </where>
+    </select>
+</mapper>

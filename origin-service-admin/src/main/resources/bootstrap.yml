@@ -1,0 +1,30 @@
+server:
+  port: 11001
+spring:
+  application:
+    name: @project.artifactId@
+  profiles:
+    active: dev # 默认激活开发环境配置
+  main:
+    allow-bean-definition-overriding: true
+  cloud:
+    compatibility-verifier:
+      enabled: false
+    nacos:
+      server-addr: nacos.jyusun.com:8848 # 服务地址
+      config: # 配置中心
+        enabled: true
+        namespace: origin_${spring.profiles.active}_namespace
+        group: SYSTEM_GROUP
+        file-extension: yml # 配置文件后缀
+        refresh-enabled: false
+        shared-configs:
+          - data-id: origin-platform.${spring.cloud.nacos.config.file-extension}
+            group: DEFAULT_GROUP
+            refresh: true
+          - data-id: mybatis-plus.${spring.cloud.nacos.config.file-extension}
+            group: DEFAULT_GROUP
+            refresh: true
+          - data-id: origin-comm-db.${spring.cloud.nacos.config.file-extension}
+            group: DEFAULT_GROUP
+            refresh: true

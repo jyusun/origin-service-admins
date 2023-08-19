@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.jyusun.origin</groupId>
+        <artifactId>origin-service-admins</artifactId>
+        <version>1.0.0-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>origin-service-admin</artifactId>
+    <version>${project.parent.version}</version>
+    <name>${project.artifactId}</name>
+    <packaging>jar</packaging>
+    <description>基础信息-启动类</description>
+
+    <dependencies>
+
+        <dependency>
+            <groupId>${project.parent.groupId}</groupId>
+            <artifactId>origin-admin-info</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>${project.parent.groupId}</groupId>
+            <artifactId>origin-admin-dict</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>${project.parent.groupId}</groupId>
+            <artifactId>origin-admin-upms</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>${project.parent.groupId}</groupId>
+            <artifactId>origin-launch-spring-boot-starter</artifactId>
+        </dependency>
+
+        <!-- 基础服务-starter -->
+        <dependency>
+            <groupId>${project.parent.groupId}</groupId>
+            <artifactId>origin-service-cloud-client</artifactId>
+        </dependency>
+
+        <!-- Swagger操作 -->
+        <dependency>
+            <groupId>${project.parent.groupId}</groupId>
+            <artifactId>origin-swagger-spring-boot-starter</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <mainClass>com.jyusun.origin.admin.AdminApplication</mainClass>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

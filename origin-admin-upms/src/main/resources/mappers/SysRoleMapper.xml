@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jyusun.origin.admin.upms.repository.dal.mapper.SysRoleMapper">
+
+    <!-- 树模型结果 -->
+    <resultMap id="tree_result" type="com.jyusun.origin.admin.upms.interfaces.facade.model.dto.SysRoleTreeDTO">
+        <id column="sid" property="sid"/>
+        <result column="zhname" property="zhname"/>
+        <result column="enname" property="enname"/>
+        <result column="sort" property="sort"/>
+        <result column="parent_id" property="parentId"/>
+        <result column="tenant_id" property="tenantId"/>
+
+        <result column="update_by" property="updateBy"/>
+        <result column="update_time" property="updateTime"/>
+
+        <collection property="children" javaType="java.util.ArrayList"
+                    ofType="com.jyusun.origin.admin.upms.interfaces.facade.model.dto.SysRoleTreeDTO"
+                    column="sid" select="listTree"/>
+    </resultMap>
+
+    <!-- 基础列 -->
+    <sql id="base_column">
+        zhname
+        ,
+        enname,
+        sort,
+        parent_id,
+        tenant_id,
+        sid,
+        update_by,
+        update_time
+    </sql>
+
+    <!-- 树形结构查询 -->
+    <select id="listTree" resultMap="tree_result">
+        select
+        <include refid="base_column"/>
+        from t001_sys_role tsr
+        <where>
+            tsr.parent_id = #{parentId}
+        </where>
+    </select>
+
+</mapper>

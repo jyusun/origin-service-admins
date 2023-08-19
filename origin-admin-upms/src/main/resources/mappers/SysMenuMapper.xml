@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jyusun.origin.admin.upms.repository.dal.mapper.SysMenuMapper">
+
+    <!-- 树模型结果 -->
+    <resultMap id="tree_result" type="com.jyusun.origin.admin.upms.interfaces.facade.model.dto.SysMenuTreeDTO">
+        <id column="sid" property="sid"/>
+        <result column="zhname" property="zhname"/>
+        <result column="enname" property="enname"/>
+        <result column="router" property="router"/>
+        <result column="component" property="component"/>
+        <result column="meta" property="meta"
+                javaType="com.jyusun.origin.admin.upms.interfaces.facade.model.dto.MenuMetaValue"
+                typeHandler="com.baomidou.mybatisplus.extension.handlers.FastjsonTypeHandler"/>
+
+        <result column="enabled" property="enabled"/>
+        <result column="rule_type" property="ruleType"/>
+        <result column="permission" property="permission"/>
+        <result column="sort" property="sort"/>
+        <result column="menu_code" property="menuCode"/>
+        <result column="parent_code" property="parentCode"/>
+
+        <result column="update_by" property="updateBy"/>
+        <result column="update_time" property="updateTime"/>
+        <result column="remarks" property="remarks"/>
+
+        <collection property="children" javaType="java.util.ArrayList"
+                    ofType="com.jyusun.origin.admin.upms.interfaces.facade.model.dto.SysMenuTreeDTO"
+                    column="menu_code" select="pageTrees"/>
+    </resultMap>
+
+    <!-- 树模型结果 -->
+    <resultMap id="dict_menu_result" type="com.jyusun.origin.core.common.model.DictDTO">
+        <result column="dictCode" property="dictCode"/>
+        <result column="dictValue" property="dictValue"/>
+        <result column="dictDesc" property="dictDesc"/>
+        <result column="sort" property="sort"/>
+        <result column="defValue" property="defValue"/>
+        <collection property="children" javaType="java.util.ArrayList"
+                    ofType="com.jyusun.origin.core.common.model.DictDTO"
+                    column="dictValue" select="listDictTree"/>
+    </resultMap>
+
+    <!-- 基础列 -->
+    <sql id="base_column">
+        rule_type,
+        zhname
+        ,
+        enname,
+        router,
+        component,
+        enabled,
+        meta,
+        permission,
+        sort,
+        menu_code,
+        parent_code,
+        sid,
+        update_by,
+        update_time,
+        remarks
+    </sql>
+
+    <!-- 树形结构查询 -->
+    <select id="pageTrees" resultMap="tree_result">
+        select
+        <include refid="base_column"/>
+        from t001_sys_menu tsm
+        <where>
+            tsm.parent_code = #{query.parentCode}
+        </where>
+        order by tsm.sort
+    </select>
+
+    <!-- 菜单树：结构查询 -->
+    <select id="listDictMenu" resultMap="dict_menu_result">
+        select
+        'menu' as dictCode,
+        tsm.menu_code  as dictValue,
+        tsm.zhname as dictDesc,
+        tsm.sort,
+        0 as defValue
+        from t001_sys_menu tsm
+        <where>
+            tsm.parent_code = #{query.parentCode}
+            and tsm.enabled = #{query.enabled}
+            <if test="query.zhname != null and query.zhname != '' ">
+                and tsm.zhname like  CONCAT(CONCAT('%', #{query.zhname}), '%')
+            </if>
+            and tsm.rule_type in ('1','2')
+        </where>
+        order by tsm.sort
+    </select>
+
+    <!-- 菜单树：结构查询 -->
+    <select id="listDictTree" resultMap="dict_menu_result">
+        select
+        'menu' as dictCode,
+        tsm.menu_code as dictValue,
+        tsm.zhname as dictDesc,
+        tsm.sort,
+        0 as defValue
+        from t001_sys_menu tsm
+        <where>
+            tsm.parent_code = #{menuCode}
+            and tsm.rule_type in ('1','2')
+        </where>
+    </select>
+
+</mapper>

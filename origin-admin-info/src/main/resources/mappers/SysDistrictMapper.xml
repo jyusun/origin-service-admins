@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jyusun.origin.admin.comm.repository.dal.mapper.SysDistrictMapper">
+
+    <!-- 树模型结果 -->
+    <resultMap id="tree_result" type="com.jyusun.origin.admin.info.interfaces.model.dto.DistrictTreeDTO">
+        <id column="sid" property="sid"/>
+        <result column="district_code" property="districtCode"/>
+        <result column="district_name" property="districtName"/>
+        <result column="district_type" property="districtType"/>
+        <result column="parent_code" property="parentCode"/>
+        <result column="sort" property="sort"/>
+
+        <result column="create_by" property="createBy"/>
+        <result column="create_time" property="createTime"/>
+
+        <collection property="children" javaType="java.util.ArrayList"
+                    ofType="com.jyusun.origin.admin.info.interfaces.model.dto.DistrictTreeDTO"
+                    column="district_code" select="listTree" />
+    </resultMap>
+
+    <!-- 基础列 -->
+    <sql id="base_column">
+        district_code,
+        district_name,
+        district_type,
+        parent_code,
+        sort,
+        sid,
+        create_by,
+        create_time
+    </sql>
+
+    <!-- 列表数据 -->
+    <select id="pageTrees" resultMap="tree_result">
+        select
+        <include refid="base_column"/>
+        from opf.t001_sys_district tsd
+        <where>
+            tsd.parent_code = '000000'
+        </where>
+    </select>
+
+    <!-- 子集树数据 -->
+    <select id="listTree" resultMap="tree_result">
+        select
+        <include refid="base_column"/>
+        from opf.t001_sys_district tsd
+        <where>
+            tsd.parent_code = #{parentCode}
+        </where>
+    </select>
+
+</mapper>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.jyusun.origin</groupId>
+        <artifactId>origin-service-parent</artifactId>
+        <version>1.0.0-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>origin-service-admins</artifactId>
+    <name>${project.artifactId}</name>
+    <packaging>pom</packaging>
+    <description>基础服务-后台管理</description>
+
+    <modules>
+        <module>origin-admin-info</module>
+        <module>origin-admin-dict</module>
+        <module>origin-admin-upms</module>
+        <module>origin-service-admin</module>
+    </modules>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>${project.parent.groupId}</groupId>
+                <artifactId>origin-admin-info</artifactId>
+                <version>${project.parent.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>${project.parent.groupId}</groupId>
+                <artifactId>origin-admin-dict</artifactId>
+                <version>${project.parent.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>${project.parent.groupId}</groupId>
+                <artifactId>origin-admin-upms</artifactId>
+                <version>${project.parent.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>${project.parent.groupId}</groupId>
+                <artifactId>origin-service-client-dependencies</artifactId>
+                <version>${project.parent.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+
+
+</project>
