@@ -1,6 +1,8 @@
 package com.jyusun.origin.admin.dict.repository.dal.dataobj;
 
+import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
+import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.jyusun.origin.base.mybatis.data.BaseData;
 import io.swagger.v3.oas.annotations.media.Schema;
@@ -25,7 +27,12 @@ import lombok.experimental.Accessors;
 public class SysDictItemDO extends BaseData {
 
     private static final long serialVersionUID = 1L;
-
+    /**
+     * 主键ID
+     */
+    @Schema(description = "主键编号")
+    @TableId(value = "sid", type = IdType.ASSIGN_ID)
+    private Long sid;
     /**
      * 字典编号
      */

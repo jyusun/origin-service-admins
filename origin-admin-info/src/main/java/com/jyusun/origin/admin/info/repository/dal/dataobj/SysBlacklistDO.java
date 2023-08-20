@@ -1,5 +1,7 @@
 package com.jyusun.origin.admin.info.repository.dal.dataobj;
 
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableId;
 import com.jyusun.origin.base.mybatis.data.BaseData;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Data;
@@ -14,5 +16,10 @@ import lombok.Data;
 @Data
 //@TableName("t000_sys_blacklist")
 public class SysBlacklistDO extends BaseData {
-
+    /**
+     * 主键ID
+     */
+    @Schema(description = "主键编号")
+    @TableId(value = "sid", type = IdType.ASSIGN_ID)
+    private Long sid;
 }

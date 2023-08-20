@@ -1,6 +1,8 @@
 package com.jyusun.origin.admin.info.repository.dal.dataobj;
 
+import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
+import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.jyusun.origin.base.mybatis.data.BaseCreate;
 import com.jyusun.origin.base.mybatis.data.BaseData;
@@ -22,7 +24,12 @@ import lombok.experimental.Accessors;
 @Accessors(chain = true)
 @TableName("t001_sys_district")
 public class SysDistrictDO extends BaseCreate {
-
+    /**
+     * 主键ID
+     */
+    @Schema(description = "主键编号")
+    @TableId(value = "sid", type = IdType.ASSIGN_ID)
+    private Long sid;
     /**
      * 编号
      */

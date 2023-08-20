@@ -1,6 +1,8 @@
 package com.jyusun.origin.admin.upms.repository.dal.dataobj;
 
+import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
+import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.baomidou.mybatisplus.extension.handlers.FastjsonTypeHandler;
 import com.jyusun.origin.base.mybatis.data.BaseData;
@@ -26,6 +28,13 @@ public class SysMenuDO extends BaseData {
 
     private static final long serialVersionUID = 1L;
     /**
+     * 主键ID
+     */
+    @Schema(description = "主键编号")
+    @TableId(value = "sid", type = IdType.ASSIGN_ID)
+    private Long sid;
+
+    /**
      * 菜单类型;1-目录|2-菜单|3-按钮
      */
     @Schema(description ="规则类型")
@@ -35,6 +44,7 @@ public class SysMenuDO extends BaseData {
     @Schema(description = "名称")
     @TableField("oname")
     private String oname;
+
     @Schema(description = "编码")
     @TableField("ocode")
     private String ocode;

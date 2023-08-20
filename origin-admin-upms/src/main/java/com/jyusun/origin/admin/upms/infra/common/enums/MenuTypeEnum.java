@@ -2,35 +2,27 @@ package com.jyusun.origin.admin.upms.infra.common.enums;
 
 import com.jyusun.origin.core.common.model.BaseKvEnum;
 import lombok.AllArgsConstructor;
-import lombok.RequiredArgsConstructor;
 
 /**
- * 用户状态
+ * 菜单类型;1-目录|2-菜单|3-按钮
  *
  * @author jyusun 2023-02-09 16:28:40
  */
 @AllArgsConstructor
-public enum UserStateEnum implements BaseKvEnum {
+public enum MenuTypeEnum implements BaseKvEnum {
+
     /**
-     * 未激活的用户
+     * 目录
      */
-    NOT_ACTIVE("0", "未激活"),
+    DIRECTORY("1", "目录"),
     /**
-     * 常规用户
+     * 菜单
      */
-    NORMAL("1", "正常"),
+    MENU("2", "菜单"),
     /**
-     * 某些行为异常被锁定的用户
+     * 按钮
      */
-    LOCK("2", "锁定"),
-    /**
-     * 违反规定被冻结的用户
-     */
-    FROZEN("3", "冻结"),
-    /**
-     * 自主注销的用户
-     */
-    LOGOFF("9", "注销");
+    BUTTON("3", "按钮");
 
     private final String code;
     private final String desc;
