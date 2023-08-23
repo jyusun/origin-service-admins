@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @since 1.0.0
  */
 @RestController
-@Tag(name = "角色管理")
+@Tag(name = "权限管理-角色管理")
 @RequestMapping("roles")
 public class SysRoleController extends BaseController<SysRoleRepository, SysRoleDO> {
     public SysRoleController(SysRoleRepository originRepository) {

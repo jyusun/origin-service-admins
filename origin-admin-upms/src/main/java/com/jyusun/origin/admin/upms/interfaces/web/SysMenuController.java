@@ -38,7 +38,7 @@ import java.util.Optional;
  * @since 1.0.0
  */
 @RestController
-@Tag(name = "菜单管理")
+@Tag(name = "权限管理-菜单管理")
 @RequestMapping("menus")
 @RequiredArgsConstructor
 public class SysMenuController {

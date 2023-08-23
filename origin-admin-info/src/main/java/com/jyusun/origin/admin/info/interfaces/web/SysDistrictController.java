@@ -36,7 +36,7 @@ import java.io.Serializable;
  * @since 1.0.0
  */
 @RestController
-@Tag(name = "行政区域")
+@Tag(name = "基础信息-行政区域")
 @RequestMapping("districts")
 @RequiredArgsConstructor
 public class SysDistrictController {

@@ -25,7 +25,7 @@ import java.util.List;
  * @since 1.0.0
  */
 @RestController
-@Tag(name = "分组管理")
+@Tag(name = "权限管理-用户分组")
 @RequestMapping("ugroups")
 @RequiredArgsConstructor
 public class SysUserGroupController {

@@ -28,3 +28,32 @@ spring:
           - data-id: origin-comm-db.${spring.cloud.nacos.config.file-extension}
             group: DEFAULT_GROUP
             refresh: true
+# springdoc-openapi项目配置
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+    tags-sorter: alpha
+    operations-sorter: alpha
+  api-docs:
+    path: /v3/api-docs
+    version: openapi_3_1
+  group-configs:
+    - group: 'default'
+      paths-to-match: '/**'
+      packages-to-scan: com.jyusun.origin.admin
+knife4j:
+  enable: true
+  setting:
+    language: zh_cn
+    swagger-model-name: 实体类列表
+  documents:
+    - name: 标题1
+      locations: classpath:markdown/*
+      group: default
+    - name: 标题2
+      locations: classpath:markdown1/*
+      group: 用户模块
+  basic:
+    enable: false
+    username: abc
+    password: 123

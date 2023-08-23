@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @since 1.0.0
  */
 @RestController
-@Tag(name = "资源分组")
+@Tag(name = "权限管理-资源分组")
 @RequestMapping("rgroups")
 public class SysRsrcGroupController extends BaseController<SysRsrcGroupRepository, SysRsrcGroupDO> {
     public SysRsrcGroupController(SysRsrcGroupRepository originRepository) {

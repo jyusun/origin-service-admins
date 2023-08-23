@@ -20,7 +20,7 @@ import org.springframework.web.bind.annotation.RestController;
 @Slf4j
 @RestController
 @RequestMapping("dict/items")
-@Tag(name = "字典类目")
+@Tag(name = "数据字典-类目管理")
 public class SysDictItemController extends BaseController<SysDictItemRepository, SysDictItemDO> {
     public SysDictItemController(SysDictItemRepository originRepository) {
         super(originRepository);

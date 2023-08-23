@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @since 1.0.0
  */
 @RestController
-@Tag(name = "数据字典")
+@Tag(name = "数据字典-类型管理")
 @RequestMapping("dict/types")
 public class SysDictController extends BaseController<SysDictRepository, SysDictDO> {
     public SysDictController(SysDictRepository originRepository) {

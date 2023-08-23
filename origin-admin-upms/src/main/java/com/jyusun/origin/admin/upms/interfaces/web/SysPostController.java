@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @since 1.0.0
  */
 @RestController
-@Tag(name = "岗位管理")
+@Tag(name = "权限管理-岗位管理")
 @RequestMapping("posts")
 public class SysPostController extends BaseController<SysPostRepository, SysPostDO> {
     public SysPostController(SysPostRepository originRepository) {

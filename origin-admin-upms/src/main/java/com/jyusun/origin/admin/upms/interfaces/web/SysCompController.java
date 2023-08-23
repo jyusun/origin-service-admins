@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @since 1.0.0
  */
 @RestController
-@Tag(name= "公司管理")
+@Tag(name= "权限管理-公司管理")
 @RequestMapping("comps")
 public class SysCompController extends BaseController<SysCompRepository, SysCompDO> {
 

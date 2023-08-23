@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @since 1.0.0
  */
 @RestController
-@Tag(name = "系统参数")
+@Tag(name = "基础信息-系统参数")
 @RequestMapping("params")
 public class SysParamController extends BaseController<SysParamRepository, SysParamDO> {
 

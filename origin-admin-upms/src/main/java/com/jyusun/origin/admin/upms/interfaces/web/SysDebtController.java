@@ -35,7 +35,7 @@ import java.io.Serializable;
  * @since 1.0.0
  */
 @RestController
-@Tag(name = "部门管理")
+@Tag(name = "权限管理-部门管理")
 @RequestMapping("debts")
 @RequiredArgsConstructor
 public class SysDebtController {

@@ -37,7 +37,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @since 1.0.0
  */
 @RestController
-@Tag(name = "系统用户")
+@Tag(name = "权限管理-系统用户")
 @RequestMapping("users")
 @RequiredArgsConstructor
 public class SysUserController {
