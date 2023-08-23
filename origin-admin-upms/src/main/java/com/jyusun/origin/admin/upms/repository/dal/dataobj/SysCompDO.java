@@ -18,6 +18,7 @@ import lombok.experimental.Accessors;
  * @since 1.0.0
  */
 @Data
+@Schema(name = "数据对象：公司管理",description = "公司管理")
 @Accessors(chain = true)
 @TableName("t002_sys_comp")
 public class SysCompDO extends BaseData {

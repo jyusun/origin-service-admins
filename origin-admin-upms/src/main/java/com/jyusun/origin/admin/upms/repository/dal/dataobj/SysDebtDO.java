@@ -16,6 +16,7 @@ import lombok.experimental.Accessors;
  * @author jyusun at 15:59:51
  */
 @Data
+@Schema(name = "数据对象：部门管理",description = "部门管理")
 @Accessors(chain = true)
 @EqualsAndHashCode(callSuper = true)
 @TableName("t002_sys_debt")

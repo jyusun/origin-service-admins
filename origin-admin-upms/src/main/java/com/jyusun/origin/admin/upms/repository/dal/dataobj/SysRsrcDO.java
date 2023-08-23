@@ -19,6 +19,7 @@ import lombok.experimental.Accessors;
  * @since 1.0.0
  */
 @Data
+@Schema(name = "数据对象：资源管理",description = "资源管理")
 @EqualsAndHashCode(callSuper = true)
 @Accessors(chain = true)
 @TableName("t002_sys_resources")

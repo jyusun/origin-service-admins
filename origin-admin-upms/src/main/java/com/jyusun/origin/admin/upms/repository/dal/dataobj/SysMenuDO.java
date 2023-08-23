@@ -21,6 +21,7 @@ import lombok.experimental.Accessors;
  * @since 1.0.0
  */
 @Data
+@Schema(name = "数据对象：菜单管理",description = "菜单管理")
 @EqualsAndHashCode(callSuper = false)
 @Accessors(chain = true)
 @TableName(value = "t002_sys_menu", autoResultMap = true)

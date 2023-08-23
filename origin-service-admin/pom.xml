@@ -20,14 +20,10 @@
             <groupId>com.github.xiaoymin</groupId>
             <artifactId>knife4j-openapi3-jakarta-spring-boot-starter</artifactId>
         </dependency>
-        <dependency>
-            <groupId>${project.parent.groupId}</groupId>
-            <artifactId>origin-admin-info</artifactId>
-        </dependency>
 
         <dependency>
             <groupId>${project.parent.groupId}</groupId>
-            <artifactId>origin-admin-dict</artifactId>
+            <artifactId>origin-admin-comm</artifactId>
         </dependency>
 
         <dependency>

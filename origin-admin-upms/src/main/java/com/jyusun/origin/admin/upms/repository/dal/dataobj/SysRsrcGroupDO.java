@@ -16,6 +16,7 @@ import lombok.experimental.Accessors;
  * @author jyusun at 2022-1-3 23:28:48
  */
 @Data
+@Schema(name = "数据对象：资源组",description = "资源组管理")
 @EqualsAndHashCode(callSuper = true)
 @Accessors(chain = true)
 @TableName("t002_sys_rgroup")

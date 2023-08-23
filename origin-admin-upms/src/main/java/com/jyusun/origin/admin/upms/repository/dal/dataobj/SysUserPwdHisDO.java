@@ -20,6 +20,7 @@ import lombok.experimental.Accessors;
  * @since 1.0.0
  */
 @Data
+@Schema(name = "数据对象：历史密码",description = "历史密码")
 @ToString
 @EqualsAndHashCode(callSuper = true)
 @Accessors(chain = true)

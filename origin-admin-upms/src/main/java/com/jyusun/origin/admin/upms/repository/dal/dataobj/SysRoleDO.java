@@ -19,6 +19,7 @@ import lombok.experimental.Accessors;
  * @since 1.0.0
  */
 @Data
+@Schema(name = "数据对象：角色管理",description = "角色管理")
 @EqualsAndHashCode(callSuper = true)
 @Accessors(chain = true)
 @TableName("t002_sys_role")

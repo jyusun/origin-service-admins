@@ -1,0 +1,1 @@
+package com.jyusun.origin.admin.comm.interfaces.model;

@@ -16,6 +16,7 @@ import lombok.experimental.Accessors;
  * @author jyusun at 15:59:51
  */
 @Data
+@Schema(name = "数据对象：岗位管理",description = "岗位管理")
 @EqualsAndHashCode(callSuper = false)
 @Accessors(chain = true)
 @TableName("t002_sys_post")

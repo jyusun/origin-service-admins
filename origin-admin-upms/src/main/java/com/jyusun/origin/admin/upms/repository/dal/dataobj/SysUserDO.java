@@ -19,6 +19,7 @@ import lombok.experimental.Accessors;
  * @since 1.0.0
  */
 @Data
+@Schema(name = "数据对象：系统用户",description = "系统用户")
 @Accessors(chain = true)
 @EqualsAndHashCode(callSuper = true)
 @TableName("t002_sys_user")

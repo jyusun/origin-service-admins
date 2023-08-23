@@ -9,7 +9,7 @@ import lombok.Data;
  *
  * @author jyusun at 2022-04-14 17:26:28
  */
-@Schema(description ="查询对象：系统菜单")
+@Schema(name = "查询对象：系统菜单",description ="查询对象：系统菜单")
 @Data
 public class SysMenuQuery implements BaseQuery {
 

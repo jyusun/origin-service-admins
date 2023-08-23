@@ -15,8 +15,7 @@
     <description>基础服务-后台管理</description>
 
     <modules>
-        <module>origin-admin-info</module>
-        <module>origin-admin-dict</module>
+        <module>origin-admin-comm</module>
         <module>origin-admin-upms</module>
         <module>origin-service-admin</module>
     </modules>
@@ -25,13 +24,7 @@
         <dependencies>
             <dependency>
                 <groupId>${project.parent.groupId}</groupId>
-                <artifactId>origin-admin-info</artifactId>
-                <version>${project.parent.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>${project.parent.groupId}</groupId>
-                <artifactId>origin-admin-dict</artifactId>
+                <artifactId>origin-admin-comm</artifactId>
                 <version>${project.parent.version}</version>
             </dependency>
 

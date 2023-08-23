@@ -1,1 +1,0 @@
-package com.jyusun.origin.admin.dict.interfaces;
