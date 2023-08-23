@@ -15,7 +15,7 @@ spring:
       config: # 配置中心
         enabled: true
         namespace: origin_${spring.profiles.active}_namespace
-        group: SYSTEM_GROUP
+        group: DEFAULT_GROUP
         file-extension: yml # 配置文件后缀
         refresh-enabled: false
         shared-configs:
