@@ -17,18 +17,17 @@ import java.util.List;
  * @since 1.0.0
  */
 @Repository
-public class SysUserGroupRepositoryImpl
-		extends CoreRepositoryImpl<SysUserGroupMapper, SysUserGroupDO>
-		implements SysUserGroupRepository {
+public class SysUserGroupRepositoryImpl extends CoreRepositoryImpl<SysUserGroupMapper, SysUserGroupDO>
+        implements SysUserGroupRepository {
 
-	@Override
-	public List<SysUserGroupDTO> listTree(UserGroupQuery query) {
-		return this.baseMapper.listTree(query);
-	}
+    @Override
+    public List<SysUserGroupDTO> listTree(UserGroupQuery query) {
+        return this.baseMapper.listTree(query);
+    }
 
-	@Override
-	public List<SysUserGroupDTO> listGroup(UserGroupQuery query) {
-		return this.baseMapper.listGroup(query);
-	}
+    @Override
+    public List<SysUserGroupDTO> listGroup(UserGroupQuery query) {
+        return this.baseMapper.listGroup(query);
+    }
 
 }

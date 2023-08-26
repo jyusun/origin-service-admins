@@ -11,31 +11,31 @@ import lombok.AllArgsConstructor;
 @AllArgsConstructor
 public enum MenuTypeEnum implements BaseKvEnum {
 
-	/**
-	 * 目录
-	 */
-	DIRECTORY("1", "目录"),
-	/**
-	 * 菜单
-	 */
-	MENU("2", "菜单"),
-	/**
-	 * 按钮
-	 */
-	BUTTON("3", "按钮");
+    /**
+     * 目录
+     */
+    DIRECTORY("1", "目录"),
+    /**
+     * 菜单
+     */
+    MENU("2", "菜单"),
+    /**
+     * 按钮
+     */
+    BUTTON("3", "按钮");
 
-	private final String code;
+    private final String code;
 
-	private final String desc;
+    private final String desc;
 
-	@Override
-	public String code() {
-		return this.code;
-	}
+    @Override
+    public String code() {
+        return this.code;
+    }
 
-	@Override
-	public String desc() {
-		return this.desc;
-	}
+    @Override
+    public String desc() {
+        return this.desc;
+    }
 
 }

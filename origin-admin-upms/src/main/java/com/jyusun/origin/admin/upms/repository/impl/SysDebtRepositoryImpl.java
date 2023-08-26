@@ -19,14 +19,11 @@ import org.springframework.stereotype.Repository;
  * @since 1.0.0
  */
 @Repository
-public class SysDebtRepositoryImpl extends CoreRepositoryImpl<SysDebtMapper, SysDebtDO>
-		implements SysDebtRepository {
+public class SysDebtRepositoryImpl extends CoreRepositoryImpl<SysDebtMapper, SysDebtDO> implements SysDebtRepository {
 
-	@Override
-	public PageObject<SysCompDebtDTO> listCompDebtTree(PageQuery pageQuery,
-			SysTreeQuery query) {
-		return PageUtil.dataInfo(
-				this.baseMapper.pageTrees(ConditionUtil.pageInfo(pageQuery), query));
-	}
+    @Override
+    public PageObject<SysCompDebtDTO> listCompDebtTree(PageQuery pageQuery, SysTreeQuery query) {
+        return PageUtil.dataInfo(this.baseMapper.pageTrees(ConditionUtil.pageInfo(pageQuery), query));
+    }
 
 }

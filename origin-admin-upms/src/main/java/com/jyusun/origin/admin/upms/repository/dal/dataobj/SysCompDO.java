@@ -23,45 +23,45 @@ import lombok.experimental.Accessors;
 @TableName("t002_sys_comp")
 public class SysCompDO extends BaseData {
 
-	private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
 
-	/**
-	 * 主键ID
-	 */
-	@Schema(description = "主键编号")
-	@TableId(value = "sid", type = IdType.ASSIGN_ID)
-	private Long sid;
+    /**
+     * 主键ID
+     */
+    @Schema(description = "主键编号")
+    @TableId(value = "sid", type = IdType.ASSIGN_ID)
+    private Long sid;
 
-	@Schema(description = "社会信用编号")
-	@TableField("comp_code")
-	private String compCode;
+    @Schema(description = "社会信用编号")
+    @TableField("comp_code")
+    private String compCode;
 
-	@Schema(description = "名称")
-	@TableField("oname")
-	private String oname;
+    @Schema(description = "名称")
+    @TableField("oname")
+    private String oname;
 
-	@Schema(description = "编码")
-	@TableField("ocode")
-	private String ocode;
+    @Schema(description = "编码")
+    @TableField("ocode")
+    private String ocode;
 
-	@Schema(description = "简称")
-	@TableField("sname")
-	private String sname;
+    @Schema(description = "简称")
+    @TableField("sname")
+    private String sname;
 
-	@Schema(description = "注册地址")
-	@TableField("address")
-	private String address;
+    @Schema(description = "注册地址")
+    @TableField("address")
+    private String address;
 
-	@Schema(description = "固定电话")
-	@TableField("landline")
-	private String landline;
+    @Schema(description = "固定电话")
+    @TableField("landline")
+    private String landline;
 
-	@Schema(description = "排序")
-	@TableField("sort")
-	private Integer sort;
+    @Schema(description = "排序")
+    @TableField("sort")
+    private Integer sort;
 
-	@Schema(description = "启用状态", example = "0-禁用，1-启用")
-	@TableField("enabled")
-	private Boolean enabled;
+    @Schema(description = "启用状态", example = "0-禁用，1-启用")
+    @TableField("enabled")
+    private Boolean enabled;
 
 }

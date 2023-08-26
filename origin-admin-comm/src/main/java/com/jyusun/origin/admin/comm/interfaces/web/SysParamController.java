@@ -21,19 +21,19 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("params")
 public class SysParamController extends BaseController<SysParamRepository, SysParamDO> {
 
-	public SysParamController(SysParamRepository originRepository) {
-		super(originRepository);
-	}
+    public SysParamController(SysParamRepository originRepository) {
+        super(originRepository);
+    }
 
-	/**
-	 * 数据删除
-	 * @param keys {@link java.util.List<Long>} 主键编号集合
-	 * @return {@link AbstractResult} 响应结果
-	 */
-	// @Schema(description ="数据删除：主键集合")
-	// @PostMapping("rems")
-	// public AbstractResult<Boolean> removeById(@RequestBody Keys keys) {
-	// return ResultFactory.status(this.originRepository.removeByIds(keys.getIds()));
-	// }
+    /**
+     * 数据删除
+     * @param keys {@link java.util.List<Long>} 主键编号集合
+     * @return {@link AbstractResult} 响应结果
+     */
+    // @Schema(description ="数据删除：主键集合")
+    // @PostMapping("rems")
+    // public AbstractResult<Boolean> removeById(@RequestBody Keys keys) {
+    // return ResultFactory.status(this.originRepository.removeByIds(keys.getIds()));
+    // }
 
 }

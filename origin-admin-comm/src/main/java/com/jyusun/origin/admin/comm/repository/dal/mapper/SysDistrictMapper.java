@@ -17,13 +17,12 @@ import org.apache.ibatis.annotations.Param;
 @Mapper
 public interface SysDistrictMapper extends CoreMapper<SysDistrictDO> {
 
-	/**
-	 * 树形结构
-	 * @param page
-	 * @param query
-	 * @return
-	 */
-	Page<DistrictTreeDTO> pageTrees(@Param("page") Page page,
-			@Param("query") SysDistrictQuery query);
+    /**
+     * 树形结构
+     * @param page
+     * @param query
+     * @return
+     */
+    Page<DistrictTreeDTO> pageTrees(@Param("page") Page page, @Param("query") SysDistrictQuery query);
 
 }

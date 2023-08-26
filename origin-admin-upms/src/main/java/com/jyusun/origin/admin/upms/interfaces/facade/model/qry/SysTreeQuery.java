@@ -13,25 +13,25 @@ import lombok.Data;
 @Data
 public class SysTreeQuery implements BaseQuery {
 
-	/**
-	 * 租户编号
-	 */
-	@Schema(description = "租户编号")
-	private Long compId;
+    /**
+     * 租户编号
+     */
+    @Schema(description = "租户编号")
+    private Long compId;
 
-	/**
-	 * 父级编号
-	 */
-	@Schema(description = "父级编号")
-	private Long parentId;
+    /**
+     * 父级编号
+     */
+    @Schema(description = "父级编号")
+    private Long parentId;
 
-	public SysTreeQuery() {
-		this.init();
-	}
+    public SysTreeQuery() {
+        this.init();
+    }
 
-	private void init() {
-		this.compId = 0L;
-		this.parentId = 0L;
-	}
+    private void init() {
+        this.compId = 0L;
+        this.parentId = 0L;
+    }
 
 }

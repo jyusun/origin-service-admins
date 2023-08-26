@@ -20,16 +20,13 @@ import org.springframework.stereotype.Repository;
  * @since 1.0.0
  */
 @Repository
-public class SysDistrictRepositoryImpl
-		extends CoreRepositoryImpl<SysDistrictMapper, SysDistrictDO>
-		implements SysDistrictRepository {
+public class SysDistrictRepositoryImpl extends CoreRepositoryImpl<SysDistrictMapper, SysDistrictDO>
+        implements SysDistrictRepository {
 
-	@Override
-	public PageObject<DistrictTreeDTO> pageTrees(PageQuery pageQuery,
-			SysDistrictQuery query) {
-		Page<DistrictTreeDTO> page = this.baseMapper
-				.pageTrees(ConditionUtil.pageInfo(pageQuery), query);
-		return PageUtil.dataInfo(page);
-	}
+    @Override
+    public PageObject<DistrictTreeDTO> pageTrees(PageQuery pageQuery, SysDistrictQuery query) {
+        Page<DistrictTreeDTO> page = this.baseMapper.pageTrees(ConditionUtil.pageInfo(pageQuery), query);
+        return PageUtil.dataInfo(page);
+    }
 
 }

@@ -15,6 +15,6 @@ import com.jyusun.origin.admin.comm.interfaces.model.qry.SysDistrictQuery;
  */
 public interface SysDistrictRepository extends CoreRepository<SysDistrictDO> {
 
-	PageObject<DistrictTreeDTO> pageTrees(PageQuery pageQuery, SysDistrictQuery query);
+    PageObject<DistrictTreeDTO> pageTrees(PageQuery pageQuery, SysDistrictQuery query);
 
 }

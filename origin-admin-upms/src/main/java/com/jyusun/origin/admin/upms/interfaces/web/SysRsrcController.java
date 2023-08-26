@@ -20,8 +20,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("auth/rsrcs")
 public class SysRsrcController extends BaseController<SysRsrcRepository, SysRsrcDO> {
 
-	public SysRsrcController(SysRsrcRepository originRepository) {
-		super(originRepository);
-	}
+    public SysRsrcController(SysRsrcRepository originRepository) {
+        super(originRepository);
+    }
 
 }

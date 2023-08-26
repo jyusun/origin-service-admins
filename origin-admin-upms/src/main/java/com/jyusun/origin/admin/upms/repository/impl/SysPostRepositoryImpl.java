@@ -13,7 +13,6 @@ import org.springframework.stereotype.Repository;
  * @since 1.0.0
  */
 @Repository
-public class SysPostRepositoryImpl extends CoreRepositoryImpl<SysPostMapper, SysPostDO>
-		implements SysPostRepository {
+public class SysPostRepositoryImpl extends CoreRepositoryImpl<SysPostMapper, SysPostDO> implements SysPostRepository {
 
 }

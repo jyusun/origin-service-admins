@@ -20,8 +20,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("comps")
 public class SysCompController extends BaseController<SysCompRepository, SysCompDO> {
 
-	public SysCompController(SysCompRepository originRepository) {
-		super(originRepository);
-	}
+    public SysCompController(SysCompRepository originRepository) {
+        super(originRepository);
+    }
 
 }

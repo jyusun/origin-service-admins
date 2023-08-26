@@ -23,15 +23,15 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping(SysParamApi.API_PREFIX)
 public class SysParamProvider implements SysParamApi {
 
-	/**
-	 * 查询系统参数
-	 * @param paramKey {@code String} 参数Key
-	 * @return 系统参数
-	 */
-	@Override
-	@GetMapping("{paramKey}")
-	public SysParamDTO findParam(@PathVariable("paramKey") String paramKey) {
-		return null;
-	}
+    /**
+     * 查询系统参数
+     * @param paramKey {@code String} 参数Key
+     * @return 系统参数
+     */
+    @Override
+    @GetMapping("{paramKey}")
+    public SysParamDTO findParam(@PathVariable("paramKey") String paramKey) {
+        return null;
+    }
 
 }

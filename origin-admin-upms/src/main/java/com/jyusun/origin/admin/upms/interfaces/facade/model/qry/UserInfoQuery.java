@@ -12,10 +12,10 @@ import lombok.Data;
 @Data
 public class UserInfoQuery implements BaseQuery {
 
-	@Schema(description = "登录名")
-	private String username;
+    @Schema(description = "登录名")
+    private String username;
 
-	@Schema(description = "用户昵称")
-	private String nickname;
+    @Schema(description = "用户昵称")
+    private String nickname;
 
 }

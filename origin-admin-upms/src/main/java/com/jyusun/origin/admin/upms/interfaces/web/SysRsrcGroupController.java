@@ -18,11 +18,10 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @Tag(name = "权限管理-资源分组")
 @RequestMapping("rgroups")
-public class SysRsrcGroupController
-		extends BaseController<SysRsrcGroupRepository, SysRsrcGroupDO> {
+public class SysRsrcGroupController extends BaseController<SysRsrcGroupRepository, SysRsrcGroupDO> {
 
-	public SysRsrcGroupController(SysRsrcGroupRepository originRepository) {
-		super(originRepository);
-	}
+    public SysRsrcGroupController(SysRsrcGroupRepository originRepository) {
+        super(originRepository);
+    }
 
 }
