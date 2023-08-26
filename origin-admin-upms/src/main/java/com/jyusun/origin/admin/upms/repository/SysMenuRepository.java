@@ -1,6 +1,5 @@
 package com.jyusun.origin.admin.upms.repository;
 
-
 import com.jyusun.origin.admin.upms.repository.dal.dataobj.SysMenuDO;
 import com.jyusun.origin.base.mybatis.CoreRepository;
 import com.jyusun.origin.core.common.model.DictDTO;
@@ -19,13 +18,12 @@ import java.util.List;
  */
 public interface SysMenuRepository extends CoreRepository<SysMenuDO> {
 
-    PageObject<SysMenuTreeDTO> pageTrees(PageQuery pageQuery, SysMenuQuery query);
+	PageObject<SysMenuTreeDTO> pageTrees(PageQuery pageQuery, SysMenuQuery query);
 
-    /**
-     * 菜单树
-     *
-     * @return
-     */
-    List<DictDTO> qryDictMenu(SysMenuQuery query);
+	/**
+	 * 菜单树
+	 * @return
+	 */
+	List<DictDTO> qryDictMenu(SysMenuQuery query);
 
 }

@@ -9,27 +9,29 @@ import lombok.Data;
  *
  * @author jyusun at 2022-04-14 17:26:28
  */
-@Schema(description ="查询对象：树")
+@Schema(description = "查询对象：树")
 @Data
 public class SysTreeQuery implements BaseQuery {
-    /**
-     * 租户编号
-     */
-    @Schema(description ="租户编号")
-    private Long compId;
 
-    /**
-     * 父级编号
-     */
-    @Schema(description ="父级编号")
-    private Long parentId;
+	/**
+	 * 租户编号
+	 */
+	@Schema(description = "租户编号")
+	private Long compId;
 
-    public SysTreeQuery() {
-        this.init();
-    }
+	/**
+	 * 父级编号
+	 */
+	@Schema(description = "父级编号")
+	private Long parentId;
 
-    private void init() {
-        this.compId = 0L;
-        this.parentId = 0L;
-    }
+	public SysTreeQuery() {
+		this.init();
+	}
+
+	private void init() {
+		this.compId = 0L;
+		this.parentId = 0L;
+	}
+
 }

@@ -1,6 +1,5 @@
 package com.jyusun.origin.admin.upms.repository.impl;
 
-
 import com.google.common.collect.Sets;
 import com.jyusun.origin.core.common.util.CollectionUtil;
 import com.jyusun.origin.core.common.util.ObjectUtil;
@@ -23,21 +22,22 @@ import java.util.Set;
 @RequiredArgsConstructor
 public class SysAuthRepositoryImpl implements SysAuthRepository {
 
-    private final SysAuthMapper sysAuthMapper;
+	private final SysAuthMapper sysAuthMapper;
 
-    @Override
-    public Set<String> findRoleByUserId(Long sid) {
-        if (ObjectUtil.isEmpty(sid) || 0L == sid) {
-            return Sets.newHashSet();
-        }
-        return sysAuthMapper.findRoleByUserId(sid);
-    }
+	@Override
+	public Set<String> findRoleByUserId(Long sid) {
+		if (ObjectUtil.isEmpty(sid) || 0L == sid) {
+			return Sets.newHashSet();
+		}
+		return sysAuthMapper.findRoleByUserId(sid);
+	}
 
-    @Override
-    public Set<String> findRsrcPermissionByRoles(Set<String> roles) {
-        if (CollectionUtil.isEmpty(roles)) {
-            return Sets.newHashSet();
-        }
-        return sysAuthMapper.findRsrcPermissionByRoles(roles);
-    }
+	@Override
+	public Set<String> findRsrcPermissionByRoles(Set<String> roles) {
+		if (CollectionUtil.isEmpty(roles)) {
+			return Sets.newHashSet();
+		}
+		return sysAuthMapper.findRsrcPermissionByRoles(roles);
+	}
+
 }

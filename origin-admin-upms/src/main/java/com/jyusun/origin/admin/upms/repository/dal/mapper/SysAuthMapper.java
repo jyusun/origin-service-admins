@@ -12,20 +12,18 @@ import java.util.Set;
  */
 public interface SysAuthMapper {
 
+	/**
+	 * 获取角色集合
+	 * @param userId 用户编号
+	 * @return
+	 */
+	Set<String> findRoleByUserId(@Param("userId") Long userId);
 
-    /**
-     * 获取角色集合
-     *
-     * @param userId 用户编号
-     * @return
-     */
-    Set<String> findRoleByUserId(@Param("userId") Long userId);
+	/**
+	 * 资源权限集合
+	 * @param roles
+	 * @return
+	 */
+	Set<String> findRsrcPermissionByRoles(@Param("roles") Set<String> roles);
 
-    /**
-     * 资源权限集合
-     *
-     * @param roles
-     * @return
-     */
-    Set<String> findRsrcPermissionByRoles(@Param("roles") Set<String> roles);
 }

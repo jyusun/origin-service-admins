@@ -1,6 +1,5 @@
 package com.jyusun.origin.admin.upms.interfaces.web;
 
-
 import com.jyusun.origin.base.mybatis.BaseController;
 import com.jyusun.origin.admin.upms.repository.dal.dataobj.SysRsrcGroupDO;
 import com.jyusun.origin.admin.upms.repository.SysRsrcGroupRepository;
@@ -19,8 +18,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @Tag(name = "权限管理-资源分组")
 @RequestMapping("rgroups")
-public class SysRsrcGroupController extends BaseController<SysRsrcGroupRepository, SysRsrcGroupDO> {
-    public SysRsrcGroupController(SysRsrcGroupRepository originRepository) {
-        super(originRepository);
-    }
+public class SysRsrcGroupController
+		extends BaseController<SysRsrcGroupRepository, SysRsrcGroupDO> {
+
+	public SysRsrcGroupController(SysRsrcGroupRepository originRepository) {
+		super(originRepository);
+	}
+
 }

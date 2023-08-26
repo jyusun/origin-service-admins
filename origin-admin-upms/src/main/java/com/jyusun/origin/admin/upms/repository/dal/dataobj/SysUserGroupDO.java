@@ -16,25 +16,25 @@ import lombok.experimental.Accessors;
  * @author jyusun at 2021年12月19日 13:47:52
  */
 @Data
-@Schema(name = "数据对象：用户组",description = "用户组管理")
+@Schema(name = "数据对象：用户组", description = "用户组管理")
 @Accessors(chain = true)
 @EqualsAndHashCode(callSuper = false)
 @TableName("t002_sys_ugroup")
 public class SysUserGroupDO extends BaseTenant {
 
-    /**
-     * 主键ID
-     */
-    @Schema(description = "主键编号")
-    @TableId(value = "sid", type = IdType.ASSIGN_ID)
-    private Long sid;
+	/**
+	 * 主键ID
+	 */
+	@Schema(description = "主键编号")
+	@TableId(value = "sid", type = IdType.ASSIGN_ID)
+	private Long sid;
 
-    @Schema(description = "名称")
-    @TableField("oname")
-    private String oname;
+	@Schema(description = "名称")
+	@TableField("oname")
+	private String oname;
 
-    @Schema(description = "编码")
-    @TableField("ocode")
-    private String ocode;
+	@Schema(description = "编码")
+	@TableField("ocode")
+	private String ocode;
 
 }

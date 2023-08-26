@@ -1,6 +1,5 @@
 package com.jyusun.origin.admin.upms.repository.impl;
 
-
 import com.jyusun.origin.base.mybatis.CoreRepositoryImpl;
 import com.jyusun.origin.admin.upms.repository.dal.dataobj.SysRoleDO;
 import com.jyusun.origin.admin.upms.repository.SysRoleRepository;
@@ -15,7 +14,6 @@ import org.springframework.stereotype.Repository;
  */
 @Repository
 public class SysRoleRepositoryImpl extends CoreRepositoryImpl<SysRoleMapper, SysRoleDO>
-        implements SysRoleRepository {
-
+		implements SysRoleRepository {
 
 }

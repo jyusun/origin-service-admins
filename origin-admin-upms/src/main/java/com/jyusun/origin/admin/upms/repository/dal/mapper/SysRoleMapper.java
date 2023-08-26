@@ -15,11 +15,11 @@ import java.util.List;
  */
 public interface SysRoleMapper extends CoreMapper<SysRoleDO> {
 
-    /**
-     * 树查询
-     *
-     * @param query 查询参数
-     * @return {@link  List <SysRoleTreeDTO>}
-     */
-    List<SysRoleTreeDTO> listTree(SysTreeQuery query);
+	/**
+	 * 树查询
+	 * @param query 查询参数
+	 * @return {@link List <SysRoleTreeDTO>}
+	 */
+	List<SysRoleTreeDTO> listTree(SysTreeQuery query);
+
 }

@@ -1,6 +1,5 @@
 package com.jyusun.origin.admin.upms.interfaces.web;
 
-
 import com.jyusun.origin.base.mybatis.BaseController;
 import com.jyusun.origin.admin.upms.repository.dal.dataobj.SysRsrcDO;
 import com.jyusun.origin.admin.upms.repository.SysRsrcRepository;
@@ -20,7 +19,9 @@ import org.springframework.web.bind.annotation.RestController;
 @Tag(name = "权限管理-资源管理")
 @RequestMapping("auth/rsrcs")
 public class SysRsrcController extends BaseController<SysRsrcRepository, SysRsrcDO> {
-    public SysRsrcController(SysRsrcRepository originRepository) {
-        super(originRepository);
-    }
+
+	public SysRsrcController(SysRsrcRepository originRepository) {
+		super(originRepository);
+	}
+
 }

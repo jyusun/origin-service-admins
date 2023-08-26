@@ -1,6 +1,5 @@
 package com.jyusun.origin.admin.upms.repository.impl;
 
-
 import com.jyusun.origin.base.mybatis.CoreRepositoryImpl;
 import com.jyusun.origin.admin.upms.repository.dal.dataobj.SysRsrcDO;
 import com.jyusun.origin.admin.upms.repository.SysRsrcRepository;
@@ -15,7 +14,6 @@ import org.springframework.stereotype.Repository;
  */
 @Repository
 public class SysRsrcRepositoryImpl extends CoreRepositoryImpl<SysRsrcMapper, SysRsrcDO>
-        implements SysRsrcRepository {
-
+		implements SysRsrcRepository {
 
 }

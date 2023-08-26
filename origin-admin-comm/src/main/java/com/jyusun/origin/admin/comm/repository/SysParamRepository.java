@@ -1,6 +1,5 @@
 package com.jyusun.origin.admin.comm.repository;
 
-
 import com.jyusun.origin.admin.comm.repository.dal.dataobj.SysParamDO;
 import com.jyusun.origin.base.mybatis.CoreRepository;
 

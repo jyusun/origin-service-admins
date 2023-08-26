@@ -1,6 +1,5 @@
 package com.jyusun.origin.admin.comm.repository.impl;
 
-
 import com.jyusun.origin.admin.comm.repository.SysDictRepository;
 import com.jyusun.origin.base.mybatis.CoreRepositoryImpl;
 import com.jyusun.origin.admin.dict.repository.dal.dataobj.SysDictDO;
@@ -15,7 +14,6 @@ import org.springframework.stereotype.Repository;
  */
 @Repository
 public class SysDictRepositoryImpl extends CoreRepositoryImpl<SysDictMapper, SysDictDO>
-        implements SysDictRepository {
-
+		implements SysDictRepository {
 
 }

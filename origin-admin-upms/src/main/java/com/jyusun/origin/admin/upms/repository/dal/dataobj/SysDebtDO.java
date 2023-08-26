@@ -16,37 +16,37 @@ import lombok.experimental.Accessors;
  * @author jyusun at 15:59:51
  */
 @Data
-@Schema(name = "数据对象：部门管理",description = "部门管理")
+@Schema(name = "数据对象：部门管理", description = "部门管理")
 @Accessors(chain = true)
 @EqualsAndHashCode(callSuper = true)
 @TableName("t002_sys_debt")
 public class SysDebtDO extends BaseTenant {
 
-    /**
-     * 主键ID
-     */
-    @Schema(description = "主键编号")
-    @TableId(value = "sid", type = IdType.ASSIGN_ID)
-    private Long sid;
+	/**
+	 * 主键ID
+	 */
+	@Schema(description = "主键编号")
+	@TableId(value = "sid", type = IdType.ASSIGN_ID)
+	private Long sid;
 
-    @Schema(description = "名称")
-    @TableField("oname")
-    private String oname;
+	@Schema(description = "名称")
+	@TableField("oname")
+	private String oname;
 
-    @Schema(description = "编码")
-    @TableField("ocode")
-    private String ocode;
+	@Schema(description = "编码")
+	@TableField("ocode")
+	private String ocode;
 
-    @Schema(description ="简称")
-    @TableField("sname")
-    private String sname;
+	@Schema(description = "简称")
+	@TableField("sname")
+	private String sname;
 
-    @Schema(description ="排序")
-    @TableField("sort")
-    private Integer sort;
+	@Schema(description = "排序")
+	@TableField("sort")
+	private Integer sort;
 
-    @Schema(description ="父级编号")
-    @TableField("parent_id")
-    private Long parentId;
+	@Schema(description = "父级编号")
+	@TableField("parent_id")
+	private Long parentId;
 
 }

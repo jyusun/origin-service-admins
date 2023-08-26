@@ -13,60 +13,60 @@ import java.time.LocalDateTime;
  *
  * @author jyusun at 2021-12-19 15:12:57
  */
-@Schema(description ="数据传输对象：岗位管理")
+@Schema(description = "数据传输对象：岗位管理")
 @Data
 @EqualsAndHashCode(callSuper = true)
 public class SysPostTreeDTO extends BaseTreeDTO<SysPostTreeDTO> implements BaseDTO {
 
-    private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
-    /**
-     * 主键编号
-     */
-    @Schema(description ="主键编号")
-    private Long sid;
+	/**
+	 * 主键编号
+	 */
+	@Schema(description = "主键编号")
+	private Long sid;
 
-    /**
-     * 名称
-     */
-    @Schema(description ="名称")
-    private String oname;
-    /**
-     *
-     * 编码
-     */
-    @Schema(description ="编码")
-    private String ocode;
+	/**
+	 * 名称
+	 */
+	@Schema(description = "名称")
+	private String oname;
 
-   /**
-     * 排序
-     */
-    @Schema(description ="排序")
-    private String sort;
+	/**
+	 *
+	 * 编码
+	 */
+	@Schema(description = "编码")
+	private String ocode;
 
-    /**
-     * 父级编号
-     */
-    @Schema(description ="父级编号")
-    private Long parentId;
+	/**
+	 * 排序
+	 */
+	@Schema(description = "排序")
+	private String sort;
 
-    /**
-     * 更新人
-     */
-    @Schema(description ="更新人ID")
-    private Long updateBy;
+	/**
+	 * 父级编号
+	 */
+	@Schema(description = "父级编号")
+	private Long parentId;
 
-    /**
-     * 父级编号
-     */
-    @Schema(description ="更新日期")
-    private LocalDateTime updateTime;
+	/**
+	 * 更新人
+	 */
+	@Schema(description = "更新人ID")
+	private Long updateBy;
 
-    /**
-     * 租户编号
-     */
-    @Schema(description ="租户编号")
-    private Long tenantId;
+	/**
+	 * 父级编号
+	 */
+	@Schema(description = "更新日期")
+	private LocalDateTime updateTime;
+
+	/**
+	 * 租户编号
+	 */
+	@Schema(description = "租户编号")
+	private Long tenantId;
 
 }
-

@@ -1,6 +1,5 @@
 package com.jyusun.origin.admin.upms.repository.impl;
 
-
 import com.jyusun.origin.base.mybatis.CoreRepositoryImpl;
 import com.jyusun.origin.admin.upms.repository.dal.dataobj.SysCompDO;
 import com.jyusun.origin.admin.upms.repository.SysCompRepository;
@@ -15,6 +14,6 @@ import org.springframework.stereotype.Repository;
  */
 @Repository
 public class SysCompRepositoryImpl extends CoreRepositoryImpl<SysCompMapper, SysCompDO>
-        implements SysCompRepository {
+		implements SysCompRepository {
 
 }

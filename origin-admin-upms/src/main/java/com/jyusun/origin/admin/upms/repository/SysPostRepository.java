@@ -1,6 +1,5 @@
 package com.jyusun.origin.admin.upms.repository;
 
-
 import com.jyusun.origin.admin.upms.repository.dal.dataobj.SysPostDO;
 import com.jyusun.origin.base.mybatis.CoreRepository;
 

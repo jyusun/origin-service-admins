@@ -1,6 +1,5 @@
 package com.jyusun.origin.admin.upms.interfaces.web;
 
-
 import com.jyusun.origin.base.mybatis.BaseController;
 import com.jyusun.origin.admin.upms.repository.dal.dataobj.SysPostDO;
 import com.jyusun.origin.admin.upms.repository.SysPostRepository;
@@ -20,7 +19,9 @@ import org.springframework.web.bind.annotation.RestController;
 @Tag(name = "权限管理-岗位管理")
 @RequestMapping("posts")
 public class SysPostController extends BaseController<SysPostRepository, SysPostDO> {
-    public SysPostController(SysPostRepository originRepository) {
-        super(originRepository);
-    }
+
+	public SysPostController(SysPostRepository originRepository) {
+		super(originRepository);
+	}
+
 }

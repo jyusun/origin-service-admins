@@ -1,6 +1,5 @@
 package com.jyusun.origin.admin.comm.repository.impl;
 
-
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.jyusun.origin.base.mybatis.CoreRepositoryImpl;
 import com.jyusun.origin.base.mybatis.common.util.ConditionUtil;
@@ -21,12 +20,16 @@ import org.springframework.stereotype.Repository;
  * @since 1.0.0
  */
 @Repository
-public class SysDistrictRepositoryImpl extends CoreRepositoryImpl<SysDistrictMapper, SysDistrictDO>
-        implements SysDistrictRepository {
+public class SysDistrictRepositoryImpl
+		extends CoreRepositoryImpl<SysDistrictMapper, SysDistrictDO>
+		implements SysDistrictRepository {
 
-    @Override
-    public PageObject<DistrictTreeDTO> pageTrees(PageQuery pageQuery, SysDistrictQuery query) {
-        Page<DistrictTreeDTO> page = this.baseMapper.pageTrees(ConditionUtil.pageInfo(pageQuery), query);
-        return PageUtil.dataInfo(page);
-    }
+	@Override
+	public PageObject<DistrictTreeDTO> pageTrees(PageQuery pageQuery,
+			SysDistrictQuery query) {
+		Page<DistrictTreeDTO> page = this.baseMapper
+				.pageTrees(ConditionUtil.pageInfo(pageQuery), query);
+		return PageUtil.dataInfo(page);
+	}
+
 }

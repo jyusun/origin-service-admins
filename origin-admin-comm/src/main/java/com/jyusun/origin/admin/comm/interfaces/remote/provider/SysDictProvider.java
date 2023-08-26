@@ -33,49 +33,42 @@ import java.util.stream.Collectors;
 @RequestMapping(SysDictApi.API_PREFIX)
 public class SysDictProvider implements SysDictApi {
 
-    private final SysDictItemRepository sysDictItemRepository;
+	private final SysDictItemRepository sysDictItemRepository;
 
-    /**
-     * 查询字典标签
-     *
-     * @param dictCode  {@code String} 类型编号
-     * @param dictValue {@code String} 字典键值
-     * @return
-     */
-    @Override
-    @GetMapping("{dictCode}/{dictValue}")
-    public DictDTO findDict(@PathVariable("dictCode") String dictCode, @PathVariable("dictValue") String dictValue) {
-        LambdaQueryWrapper<SysDictItemDO> wrapper = Wrappers.lambdaQuery();
-        wrapper.eq(SysDictItemDO::getDictCode, dictCode)
-                .eq(SysDictItemDO::getDictValue, dictValue);
-        SysDictItemDO one = sysDictItemRepository.getOne(wrapper);
-        return new DictDTO()
-                .setDictCode(one.getDictCode())
-                .setDictValue(one.getDictValue())
-                .setDictDesc(one.getDictDesc());
-    }
+	/**
+	 * 查询字典标签
+	 * @param dictCode {@code String} 类型编号
+	 * @param dictValue {@code String} 字典键值
+	 * @return
+	 */
+	@Override
+	@GetMapping("{dictCode}/{dictValue}")
+	public DictDTO findDict(@PathVariable("dictCode") String dictCode,
+			@PathVariable("dictValue") String dictValue) {
+		LambdaQueryWrapper<SysDictItemDO> wrapper = Wrappers.lambdaQuery();
+		wrapper.eq(SysDictItemDO::getDictCode, dictCode).eq(SysDictItemDO::getDictValue,
+				dictValue);
+		SysDictItemDO one = sysDictItemRepository.getOne(wrapper);
+		return new DictDTO().setDictCode(one.getDictCode())
+				.setDictValue(one.getDictValue()).setDictDesc(one.getDictDesc());
+	}
 
+	/**
+	 * 查询字典项集合
+	 * @param dictCode {@code String} 类型编号
+	 * @return
+	 */
+	@Override
+	@GetMapping("{dictCode}")
+	public List<DictDTO> findItems(@PathVariable("dictCode") String dictCode) {
+		LambdaQueryWrapper<SysDictItemDO> wrapper = Wrappers.lambdaQuery();
+		wrapper.eq(SysDictItemDO::getDictCode, dictCode);
+		List<SysDictItemDO> dictItems = sysDictItemRepository.list(wrapper);
+		return Optional.ofNullable(dictItems).orElse(Lists.newArrayList()).stream()
+				.map(obj -> new DictDTO().setDictCode(obj.getDictCode())
+						.setDictDesc(obj.getDictCode()).setDictValue(obj.getDictCode())
+						.setSort(obj.getSort()).setDefMark(obj.getDefMark()))
+				.collect(Collectors.toList());
+	}
 
-    /**
-     * 查询字典项集合
-     *
-     * @param dictCode {@code String} 类型编号
-     * @return
-     */
-    @Override
-    @GetMapping("{dictCode}")
-    public List<DictDTO> findItems(@PathVariable("dictCode") String dictCode) {
-        LambdaQueryWrapper<SysDictItemDO> wrapper = Wrappers.lambdaQuery();
-        wrapper.eq(SysDictItemDO::getDictCode, dictCode);
-        List<SysDictItemDO> dictItems = sysDictItemRepository.list(wrapper);
-        return Optional.ofNullable(dictItems).orElse(Lists.newArrayList())
-                .stream()
-                .map(obj -> new DictDTO()
-                        .setDictCode(obj.getDictCode())
-                        .setDictDesc(obj.getDictCode())
-                        .setDictValue(obj.getDictCode())
-                        .setSort(obj.getSort())
-                        .setDefMark(obj.getDefMark())
-                ).collect(Collectors.toList());
-    }
 }

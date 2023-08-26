@@ -1,6 +1,5 @@
 package com.jyusun.origin.admin.upms.repository.impl;
 
-
 import com.jyusun.origin.base.mybatis.CoreRepositoryImpl;
 import com.jyusun.origin.admin.upms.repository.dal.dataobj.SysUserPwdHisDO;
 import com.jyusun.origin.admin.upms.repository.SysHisPasswordRepository;
@@ -14,7 +13,8 @@ import org.springframework.stereotype.Repository;
  * @since 1.0.0
  */
 @Repository
-public class SysHisPasswordRepositoryImpl extends CoreRepositoryImpl<HisPasswordMapper, SysUserPwdHisDO>
-        implements SysHisPasswordRepository {
+public class SysHisPasswordRepositoryImpl
+		extends CoreRepositoryImpl<HisPasswordMapper, SysUserPwdHisDO>
+		implements SysHisPasswordRepository {
 
 }

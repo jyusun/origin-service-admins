@@ -33,47 +33,43 @@ import java.util.Set;
 @RequiredArgsConstructor
 public class SysUserProvider implements SysUserApi {
 
-    private final SysUserRepository sysUserRepository;
+	private final SysUserRepository sysUserRepository;
 
-    private final SysAuthRepository sysAuthRepository;
+	private final SysAuthRepository sysAuthRepository;
 
-    /**
-     * 查询用户信息
-     *
-     * @param username {@code String} 用户名
-     * @return 用户信息
-     */
-    @Override
-    @GetMapping("{username}")
-    public SysUserDTO findUserInfo(@PathVariable("username") String username) {
-        LambdaQueryWrapper<SysUserDO> wrapper = Wrappers.lambdaQuery();
-        wrapper.eq(SysUserDO::getUsername, username);
-        SysUserDO sysUserDO = Optional.ofNullable(sysUserRepository.getOne(wrapper)).orElse(new SysUserDO());
-        Set<String> roles = sysAuthRepository.findRoleByUserId(sysUserDO.getSid());
-        Set<String> permissions = sysAuthRepository.findRsrcPermissionByRoles(roles);
+	/**
+	 * 查询用户信息
+	 * @param username {@code String} 用户名
+	 * @return 用户信息
+	 */
+	@Override
+	@GetMapping("{username}")
+	public SysUserDTO findUserInfo(@PathVariable("username") String username) {
+		LambdaQueryWrapper<SysUserDO> wrapper = Wrappers.lambdaQuery();
+		wrapper.eq(SysUserDO::getUsername, username);
+		SysUserDO sysUserDO = Optional.ofNullable(sysUserRepository.getOne(wrapper))
+				.orElse(new SysUserDO());
+		Set<String> roles = sysAuthRepository.findRoleByUserId(sysUserDO.getSid());
+		Set<String> permissions = sysAuthRepository.findRsrcPermissionByRoles(roles);
 
-        return new SysUserDTO()
-                .setUserId(sysUserDO.getSid())
-                .setUsername(sysUserDO.getUsername())
-                .setPassword(sysUserDO.getPassword())
-                .setEnabled(sysUserDO.getEnabled())
-                // TODO 后续处理
-                .setAccountNonLocked(true)
-                .setAccountNonExpired(true)
-                .setCredentialsNonExpired(true)
-                .setRoles(roles)
-                .setPermissions(permissions);
-    }
+		return new SysUserDTO().setUserId(sysUserDO.getSid())
+				.setUsername(sysUserDO.getUsername()).setPassword(sysUserDO.getPassword())
+				.setEnabled(sysUserDO.getEnabled())
+				// TODO 后续处理
+				.setAccountNonLocked(true).setAccountNonExpired(true)
+				.setCredentialsNonExpired(true).setRoles(roles)
+				.setPermissions(permissions);
+	}
 
-    /**
-     * 用户注册
-     *
-     * @param register {@link SysUserRegisterDTO} 用户注册
-     * @return 用户信息
-     */
-    @Override
-    @PostMapping("register")
-    public Boolean userRegister(SysUserRegisterDTO register) {
-        return null;
-    }
+	/**
+	 * 用户注册
+	 * @param register {@link SysUserRegisterDTO} 用户注册
+	 * @return 用户信息
+	 */
+	@Override
+	@PostMapping("register")
+	public Boolean userRegister(SysUserRegisterDTO register) {
+		return null;
+	}
+
 }

@@ -18,18 +18,18 @@ import java.util.List;
  */
 public interface SysMenuMapper extends CoreMapper<SysMenuDO> {
 
-    /**
-     * 树查询
-     *
-     * @param query 查询参数
-     * @return {@link  List <SysMenuDTO>}
-     */
-    Page<SysMenuTreeDTO> pageTrees(@Param("page") Page<SysMenuTreeDTO> page, @Param("query") SysMenuQuery query);
+	/**
+	 * 树查询
+	 * @param query 查询参数
+	 * @return {@link List <SysMenuDTO>}
+	 */
+	Page<SysMenuTreeDTO> pageTrees(@Param("page") Page<SysMenuTreeDTO> page,
+			@Param("query") SysMenuQuery query);
 
-    /**
-     * 菜单树
-     *
-     * @return
-     */
-    List<DictDTO> listDictMenu(@Param("query") SysMenuQuery query);
+	/**
+	 * 菜单树
+	 * @return
+	 */
+	List<DictDTO> listDictMenu(@Param("query") SysMenuQuery query);
+
 }

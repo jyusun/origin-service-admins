@@ -1,6 +1,5 @@
 package com.jyusun.origin.admin.upms.repository.impl;
 
-
 import com.jyusun.origin.base.mybatis.CoreRepositoryImpl;
 import com.jyusun.origin.admin.upms.repository.dal.dataobj.SysUserDO;
 import com.jyusun.origin.admin.upms.repository.SysUserRepository;
@@ -14,7 +13,7 @@ import org.springframework.stereotype.Repository;
  * @since 1.0.0
  */
 @Repository
-public class SysUserRepositoryImpl extends CoreRepositoryImpl<SysUserMapper, SysUserDO> implements SysUserRepository {
-
+public class SysUserRepositoryImpl extends CoreRepositoryImpl<SysUserMapper, SysUserDO>
+		implements SysUserRepository {
 
 }

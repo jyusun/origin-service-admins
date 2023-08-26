@@ -1,6 +1,5 @@
 package com.jyusun.origin.admin.upms.interfaces.web;
 
-
 import com.jyusun.origin.admin.upms.repository.dal.dataobj.SysUserDO;
 import com.jyusun.origin.admin.upms.repository.SysUserRepository;
 import com.jyusun.origin.admin.upms.interfaces.facade.model.cmd.UserRegisterCmd;
@@ -27,36 +26,35 @@ import org.springframework.web.bind.annotation.RestController;
 @RequiredArgsConstructor
 public class SysLoginController {
 
-    private final SysUserRepository sysUserRepository;
+	private final SysUserRepository sysUserRepository;
 
-    @Operation(summary = "系统登录")
-    @PostMapping("login")
-    public void login() {
-    }
+	@Operation(summary = "系统登录")
+	@PostMapping("login")
+	public void login() {
+	}
 
-    @Operation(summary = "登录注销")
-    @PostMapping("logout")
-    public void logout() {
-    }
+	@Operation(summary = "登录注销")
+	@PostMapping("logout")
+	public void logout() {
+	}
 
-    @Operation(summary = "用户注册")
-    @PostMapping
-    public Boolean register(@RequestBody UserRegisterCmd userRegisterCmd) {
-        SysUserDO sysUserDO = new SysUserDO();
-        return sysUserRepository.save(sysUserDO);
-    }
+	@Operation(summary = "用户注册")
+	@PostMapping
+	public Boolean register(@RequestBody UserRegisterCmd userRegisterCmd) {
+		SysUserDO sysUserDO = new SysUserDO();
+		return sysUserRepository.save(sysUserDO);
+	}
 
-    @Operation(summary = "在线用户")
-    @GetMapping("online")
-    public void online() {
+	@Operation(summary = "在线用户")
+	@GetMapping("online")
+	public void online() {
 
-    }
+	}
 
-    @Operation(summary = "强制登出")
-    @PostMapping("forced/logout")
-    public void forcedLogout() {
+	@Operation(summary = "强制登出")
+	@PostMapping("forced/logout")
+	public void forcedLogout() {
 
-    }
-
+	}
 
 }

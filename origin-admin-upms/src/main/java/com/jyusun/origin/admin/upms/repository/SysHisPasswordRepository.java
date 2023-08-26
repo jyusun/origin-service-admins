@@ -1,6 +1,5 @@
 package com.jyusun.origin.admin.upms.repository;
 
-
 import com.jyusun.origin.admin.upms.repository.dal.dataobj.SysUserPwdHisDO;
 import com.jyusun.origin.base.mybatis.CoreRepository;
 
@@ -11,6 +10,5 @@ import com.jyusun.origin.base.mybatis.CoreRepository;
  * @since 1.0.0
  */
 public interface SysHisPasswordRepository extends CoreRepository<SysUserPwdHisDO> {
-
 
 }

@@ -15,5 +15,7 @@ import org.apache.ibatis.annotations.Param;
  */
 public interface SysDebtMapper extends CoreMapper<SysDebtDO> {
 
-    Page<SysCompDebtDTO> pageTrees(@Param("page") Page<SysCompDebtDTO> page, @Param("query") SysTreeQuery query);
+	Page<SysCompDebtDTO> pageTrees(@Param("page") Page<SysCompDebtDTO> page,
+			@Param("query") SysTreeQuery query);
+
 }

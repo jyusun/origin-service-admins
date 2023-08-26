@@ -15,20 +15,18 @@ import java.util.List;
  */
 public interface SysUserGroupMapper extends CoreMapper<SysUserGroupDO> {
 
-    /**
-     * 树查询
-     *
-     * @param query 查询参数
-     * @return {@link  List<   SysUserGroupDTO   >}
-     */
-    List<SysUserGroupDTO> listTree(UserGroupQuery query);
+	/**
+	 * 树查询
+	 * @param query 查询参数
+	 * @return {@link List< SysUserGroupDTO >}
+	 */
+	List<SysUserGroupDTO> listTree(UserGroupQuery query);
 
-    /**
-     * 列表查询
-     *
-     * @param query 查询参数
-     * @return {@link  List<  SysUserGroupDTO  >}
-     */
-    List<SysUserGroupDTO> listGroup(UserGroupQuery query);
+	/**
+	 * 列表查询
+	 * @param query 查询参数
+	 * @return {@link List< SysUserGroupDTO >}
+	 */
+	List<SysUserGroupDTO> listGroup(UserGroupQuery query);
 
 }

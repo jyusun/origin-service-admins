@@ -16,25 +16,27 @@ import lombok.EqualsAndHashCode;
 @EqualsAndHashCode(callSuper = true)
 public class SysUserGroupDTO extends BaseTreeDTO<SysUserGroupDTO> implements BaseDTO {
 
-    private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
-    @Schema(description = "分组编号")
-    private Long sid;
-    /**
-     * 名称
-     */
-    @Schema(description = "名称")
-    private String oname;
-    /**
-     * 编码
-     */
-    @Schema(description = "编码")
-    private String ocode;
+	@Schema(description = "分组编号")
+	private Long sid;
 
-    /**
-     * 父级编号
-     */
-    @Schema(description = "父级编号")
-    private String parentId;
+	/**
+	 * 名称
+	 */
+	@Schema(description = "名称")
+	private String oname;
+
+	/**
+	 * 编码
+	 */
+	@Schema(description = "编码")
+	private String ocode;
+
+	/**
+	 * 父级编号
+	 */
+	@Schema(description = "父级编号")
+	private String parentId;
+
 }
-

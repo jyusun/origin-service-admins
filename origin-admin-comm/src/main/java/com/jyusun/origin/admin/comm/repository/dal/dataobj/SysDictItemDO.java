@@ -26,53 +26,55 @@ import lombok.experimental.Accessors;
 @TableName("t001_sys_dict_item")
 public class SysDictItemDO extends BaseData {
 
-    private static final long serialVersionUID = 1L;
-    /**
-     * 主键ID
-     */
-    @Schema(description = "主键编号")
-    @TableId(value = "sid", type = IdType.ASSIGN_ID)
-    private Long sid;
-    /**
-     * 字典编号
-     */
-    @Schema(description = "字典编号")
-    @TableField("dict_code")
-    private String dictCode;
+	private static final long serialVersionUID = 1L;
 
-    /**
-     * 字典键值
-     */
-    @Schema(description = "字典键值")
-    @TableField("dict_value")
-    private String dictValue;
+	/**
+	 * 主键ID
+	 */
+	@Schema(description = "主键编号")
+	@TableId(value = "sid", type = IdType.ASSIGN_ID)
+	private Long sid;
 
-    /**
-     * 字典标签
-     */
-    @Schema(description = "字典描述")
-    @TableField("dict_desc")
-    private String dictDesc;
+	/**
+	 * 字典编号
+	 */
+	@Schema(description = "字典编号")
+	@TableField("dict_code")
+	private String dictCode;
 
-    /**
-     * 默认展示（0-false 否 1-true 是）
-     */
-    @Schema(description = "默认标识")
-    @TableField("def_mark")
-    private Boolean defMark;
+	/**
+	 * 字典键值
+	 */
+	@Schema(description = "字典键值")
+	@TableField("dict_value")
+	private String dictValue;
 
-    /**
-     * 字典排序
-     */
-    @Schema(description = "字典排序")
-    @TableField("sort")
-    private Integer sort;
+	/**
+	 * 字典标签
+	 */
+	@Schema(description = "字典描述")
+	@TableField("dict_desc")
+	private String dictDesc;
 
-    /**
-     * 状态（0-false 停用 1-true 正常）
-     */
-    @Schema(description = "是否启用",example = "0-关闭|1-启用")
-    @TableField("enabled")
-    private Boolean enabled;
+	/**
+	 * 默认展示（0-false 否 1-true 是）
+	 */
+	@Schema(description = "默认标识")
+	@TableField("def_mark")
+	private Boolean defMark;
+
+	/**
+	 * 字典排序
+	 */
+	@Schema(description = "字典排序")
+	@TableField("sort")
+	private Integer sort;
+
+	/**
+	 * 状态（0-false 停用 1-true 正常）
+	 */
+	@Schema(description = "是否启用", example = "0-关闭|1-启用")
+	@TableField("enabled")
+	private Boolean enabled;
 
 }

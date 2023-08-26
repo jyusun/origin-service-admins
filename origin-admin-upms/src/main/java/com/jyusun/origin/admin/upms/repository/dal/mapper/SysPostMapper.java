@@ -14,11 +14,12 @@ import java.util.List;
  * @since 1.0.0
  */
 public interface SysPostMapper extends CoreMapper<SysPostDO> {
-    /**
-     * 树查询
-     *
-     * @param query 查询参数
-     * @return {@link  List <SysPostTreeDTO>}
-     */
-    List<SysPostTreeDTO> listTree(SysTreeQuery query);
+
+	/**
+	 * 树查询
+	 * @param query 查询参数
+	 * @return {@link List <SysPostTreeDTO>}
+	 */
+	List<SysPostTreeDTO> listTree(SysTreeQuery query);
+
 }

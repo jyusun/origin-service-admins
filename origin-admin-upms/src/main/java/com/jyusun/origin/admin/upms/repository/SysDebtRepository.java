@@ -1,6 +1,5 @@
 package com.jyusun.origin.admin.upms.repository;
 
-
 import com.jyusun.origin.admin.upms.repository.dal.dataobj.SysDebtDO;
 import com.jyusun.origin.base.mybatis.CoreRepository;
 import com.jyusun.origin.core.common.model.page.PageObject;
@@ -16,5 +15,6 @@ import com.jyusun.origin.admin.upms.interfaces.facade.model.qry.SysTreeQuery;
  */
 public interface SysDebtRepository extends CoreRepository<SysDebtDO> {
 
-    PageObject<SysCompDebtDTO> listCompDebtTree(PageQuery pageQuery, SysTreeQuery query);
+	PageObject<SysCompDebtDTO> listCompDebtTree(PageQuery pageQuery, SysTreeQuery query);
+
 }

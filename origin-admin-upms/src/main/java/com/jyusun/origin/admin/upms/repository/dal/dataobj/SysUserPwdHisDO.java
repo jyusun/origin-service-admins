@@ -20,28 +20,28 @@ import lombok.experimental.Accessors;
  * @since 1.0.0
  */
 @Data
-@Schema(name = "数据对象：历史密码",description = "历史密码")
+@Schema(name = "数据对象：历史密码", description = "历史密码")
 @ToString
 @EqualsAndHashCode(callSuper = true)
 @Accessors(chain = true)
 @TableName("t001_his_password")
 public class SysUserPwdHisDO extends BaseCreate {
 
-    private static final long serialVersionUID = 1L;
-    /**
-     * 主键ID
-     */
-    @Schema(description = "主键编号")
-    @TableId(value = "sid", type = IdType.ASSIGN_ID)
-    private Long sid;
+	private static final long serialVersionUID = 1L;
 
-    @Schema(description = "用户编号")
-    @TableField("uid")
-    private Long uid;
+	/**
+	 * 主键ID
+	 */
+	@Schema(description = "主键编号")
+	@TableId(value = "sid", type = IdType.ASSIGN_ID)
+	private Long sid;
 
-    @Schema(description = "用户密码")
-    @TableField("password")
-    private String password;
+	@Schema(description = "用户编号")
+	@TableField("uid")
+	private Long uid;
 
+	@Schema(description = "用户密码")
+	@TableField("password")
+	private String password;
 
 }

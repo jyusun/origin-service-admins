@@ -1,6 +1,5 @@
 package com.jyusun.origin.admin.upms.interfaces.web;
 
-
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.jyusun.origin.base.logger.annotation.SysLogger;
@@ -42,87 +41,83 @@ import org.springframework.web.bind.annotation.RestController;
 @RequiredArgsConstructor
 public class SysUserController {
 
-    private final SysUserRepository sysUserRepository;
+	private final SysUserRepository sysUserRepository;
 
-    /**
-     * 列表分页查询
-     *
-     * @param pageQuery {@link PageQuery} 分页参数查询对象
-     * @param query     {@link UserInfoQuery} 查询对象
-     * @return {@link AbstractResult} 响应结果
-     */
-    @Operation(summary = "分页查询：分页条件", method = "get")
-    @GetMapping
-    public AbstractResult<PageObject<SysUserDO>> pageQuery(PageQuery pageQuery, UserInfoQuery query) {
-        LambdaQueryWrapper<SysUserDO> wrapper = Wrappers.lambdaQuery();
-        wrapper.eq(StringUtil.hasText(query.getUsername()), SysUserDO::getUsername,
-                query.getUsername());
-        wrapper.like(StringUtil.hasText(query.getNickname()), SysUserDO::getNickname,
-                query.getNickname());
-        return ResultFactory.data(PageUtil.dataInfo(this.sysUserRepository.page(pageQuery, wrapper)));
-    }
+	/**
+	 * 列表分页查询
+	 * @param pageQuery {@link PageQuery} 分页参数查询对象
+	 * @param query {@link UserInfoQuery} 查询对象
+	 * @return {@link AbstractResult} 响应结果
+	 */
+	@Operation(summary = "分页查询：分页条件", method = "get")
+	@GetMapping
+	public AbstractResult<PageObject<SysUserDO>> pageQuery(PageQuery pageQuery,
+			UserInfoQuery query) {
+		LambdaQueryWrapper<SysUserDO> wrapper = Wrappers.lambdaQuery();
+		wrapper.eq(StringUtil.hasText(query.getUsername()), SysUserDO::getUsername,
+				query.getUsername());
+		wrapper.like(StringUtil.hasText(query.getNickname()), SysUserDO::getNickname,
+				query.getNickname());
+		return ResultFactory
+				.data(PageUtil.dataInfo(this.sysUserRepository.page(pageQuery, wrapper)));
+	}
 
-    /**
-     * 数据编辑
-     *
-     * @param sid {@link SysUserDO} 主键编号.
-     * @return {@link AbstractResult} 响应结果
-     */
-    @Operation(summary = "数据查询：主键编号", method = "get")
-    @GetMapping("{sid}")
-    @SysLogger(operType = OperTypeEnum.DETAIL)
-    public SysUserDO findById(@PathVariable("sid") Long sid) {
-        return sysUserRepository.getById(sid);
-    }
+	/**
+	 * 数据编辑
+	 * @param sid {@link SysUserDO} 主键编号.
+	 * @return {@link AbstractResult} 响应结果
+	 */
+	@Operation(summary = "数据查询：主键编号", method = "get")
+	@GetMapping("{sid}")
+	@SysLogger(operType = OperTypeEnum.DETAIL)
+	public SysUserDO findById(@PathVariable("sid") Long sid) {
+		return sysUserRepository.getById(sid);
+	}
 
-    /**
-     * 数据新增
-     *
-     * @param userInfo {@link SysUserDO} 用户账户信息.
-     * @return {@link AbstractResult} 响应结果
-     */
-    @Operation(summary = "数据编辑", method = "post")
-    @PostMapping
-    public Boolean save(@RequestBody SysUserDO userInfo) {
-        userInfo.setPassword(UuidUtil.generateUuidStr32());
-        return userInfo.insert();
-    }
+	/**
+	 * 数据新增
+	 * @param userInfo {@link SysUserDO} 用户账户信息.
+	 * @return {@link AbstractResult} 响应结果
+	 */
+	@Operation(summary = "数据编辑", method = "post")
+	@PostMapping
+	public Boolean save(@RequestBody SysUserDO userInfo) {
+		userInfo.setPassword(UuidUtil.generateUuidStr32());
+		return userInfo.insert();
+	}
 
-    /**
-     * 数据编辑
-     *
-     * @param userInfo {@link SysUserDO} 用户账户信息.
-     * @return {@link AbstractResult} 响应结果
-     */
-    @Operation(summary = "数据编辑", method = "put")
-    @PutMapping("{sid}")
-    public Boolean edit(@PathVariable Long sid, @RequestBody SysUserDO userInfo) {
-        userInfo.setSid(sid);
-        return userInfo.updateById();
-    }
+	/**
+	 * 数据编辑
+	 * @param userInfo {@link SysUserDO} 用户账户信息.
+	 * @return {@link AbstractResult} 响应结果
+	 */
+	@Operation(summary = "数据编辑", method = "put")
+	@PutMapping("{sid}")
+	public Boolean edit(@PathVariable Long sid, @RequestBody SysUserDO userInfo) {
+		userInfo.setSid(sid);
+		return userInfo.updateById();
+	}
 
-    /**
-     * 数据删除
-     *
-     * @param keys {@link java.util.List<Long>} 主键编号集合
-     * @return {@link AbstractResult} 响应结果
-     */
-    @Operation(summary = "数据删除：主键集合", method = "post")
-    @PostMapping("rems")
-    public Boolean removeById(@RequestBody KeyParam keys) {
-        return sysUserRepository.removeByIds(keys.getIds());
-    }
+	/**
+	 * 数据删除
+	 * @param keys {@link java.util.List<Long>} 主键编号集合
+	 * @return {@link AbstractResult} 响应结果
+	 */
+	@Operation(summary = "数据删除：主键集合", method = "post")
+	@PostMapping("rems")
+	public Boolean removeById(@RequestBody KeyParam keys) {
+		return sysUserRepository.removeByIds(keys.getIds());
+	}
 
-    /**
-     * 数据编辑
-     *
-     * @param sid {@link Long} 主键编号
-     * @return {@link AbstractResult} 响应结果
-     */
-    @Operation(summary = "数据删除：主键编号", method = "delete")
-    @DeleteMapping("{sid}")
-    public Boolean removeById(@PathVariable Long sid) {
-        return sysUserRepository.removeById(sid);
-    }
+	/**
+	 * 数据编辑
+	 * @param sid {@link Long} 主键编号
+	 * @return {@link AbstractResult} 响应结果
+	 */
+	@Operation(summary = "数据删除：主键编号", method = "delete")
+	@DeleteMapping("{sid}")
+	public Boolean removeById(@PathVariable Long sid) {
+		return sysUserRepository.removeById(sid);
+	}
 
 }

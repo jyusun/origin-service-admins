@@ -1,6 +1,5 @@
 package com.jyusun.origin.admin.comm.interfaces.web;
 
-
 import com.jyusun.origin.admin.comm.repository.SysDictItemRepository;
 import com.jyusun.origin.base.mybatis.BaseController;
 import com.jyusun.origin.admin.dict.repository.dal.dataobj.SysDictItemDO;
@@ -21,8 +20,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("dict/items")
 @Tag(name = "数据字典-字典项目")
-public class SysDictItemController extends BaseController<SysDictItemRepository, SysDictItemDO> {
-    public SysDictItemController(SysDictItemRepository originRepository) {
-        super(originRepository);
-    }
+public class SysDictItemController
+		extends BaseController<SysDictItemRepository, SysDictItemDO> {
+
+	public SysDictItemController(SysDictItemRepository originRepository) {
+		super(originRepository);
+	}
+
 }

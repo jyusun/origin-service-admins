@@ -1,6 +1,5 @@
 package com.jyusun.origin.admin.upms.repository.impl;
 
-
 import com.jyusun.origin.base.mybatis.CoreRepositoryImpl;
 import com.jyusun.origin.base.mybatis.common.util.ConditionUtil;
 import com.jyusun.origin.base.mybatis.common.util.PageUtil;
@@ -21,10 +20,13 @@ import org.springframework.stereotype.Repository;
  */
 @Repository
 public class SysDebtRepositoryImpl extends CoreRepositoryImpl<SysDebtMapper, SysDebtDO>
-        implements SysDebtRepository {
+		implements SysDebtRepository {
 
-    @Override
-    public PageObject<SysCompDebtDTO> listCompDebtTree(PageQuery pageQuery, SysTreeQuery query) {
-        return PageUtil.dataInfo(this.baseMapper.pageTrees(ConditionUtil.pageInfo(pageQuery), query));
-    }
+	@Override
+	public PageObject<SysCompDebtDTO> listCompDebtTree(PageQuery pageQuery,
+			SysTreeQuery query) {
+		return PageUtil.dataInfo(
+				this.baseMapper.pageTrees(ConditionUtil.pageInfo(pageQuery), query));
+	}
+
 }

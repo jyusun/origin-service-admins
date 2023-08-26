@@ -1,6 +1,5 @@
 package com.jyusun.origin.admin.upms.interfaces.web;
 
-
 import com.jyusun.origin.base.mybatis.BaseController;
 import com.jyusun.origin.admin.upms.repository.dal.dataobj.SysRoleDO;
 import com.jyusun.origin.admin.upms.repository.SysRoleRepository;
@@ -20,7 +19,9 @@ import org.springframework.web.bind.annotation.RestController;
 @Tag(name = "权限管理-角色管理")
 @RequestMapping("roles")
 public class SysRoleController extends BaseController<SysRoleRepository, SysRoleDO> {
-    public SysRoleController(SysRoleRepository originRepository) {
-        super(originRepository);
-    }
+
+	public SysRoleController(SysRoleRepository originRepository) {
+		super(originRepository);
+	}
+
 }
