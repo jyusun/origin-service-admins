@@ -20,11 +20,10 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("dict/items")
 @Tag(name = "数据字典-字典项目")
-public class SysDictItemController
-		extends BaseController<SysDictItemRepository, SysDictItemDO> {
+public class SysDictItemController extends BaseController<SysDictItemRepository, SysDictItemDO> {
 
-	public SysDictItemController(SysDictItemRepository originRepository) {
-		super(originRepository);
-	}
+    public SysDictItemController(SysDictItemRepository originRepository) {
+        super(originRepository);
+    }
 
 }

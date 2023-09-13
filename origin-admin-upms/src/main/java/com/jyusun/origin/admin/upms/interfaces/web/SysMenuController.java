@@ -42,76 +42,75 @@ import java.util.Optional;
 @RequiredArgsConstructor
 public class SysMenuController {
 
-	private final SysMenuRepository sysMenuRepository;
+    private final SysMenuRepository sysMenuRepository;
 
-	private final MenuToDtoAssembler sysMenuToDtoAssembler;
+    private final MenuToDtoAssembler sysMenuToDtoAssembler;
 
-	@Operation(summary = "分页树结构：资源菜单")
-	@GetMapping
-	public PageObject<SysMenuTreeDTO> pageQuery(PageQuery pageQuery, SysMenuQuery query) {
-		return this.sysMenuRepository.pageTrees(pageQuery, query);
-	}
+    @Operation(summary = "分页树结构：资源菜单")
+    @GetMapping
+    public PageObject<SysMenuTreeDTO> pageQuery(PageQuery pageQuery, SysMenuQuery query) {
+        return this.sysMenuRepository.pageTrees(pageQuery, query);
+    }
 
-	@Operation(summary = "树结构：资源菜单")
-	@GetMapping("extdict")
-	public List<DictDTO> qryDictMenu(SysMenuQuery query) {
-		List<DictDTO> menus = this.sysMenuRepository.qryDictMenu(query);
-		menus.add(new DictDTO().setDictCode("menu").setDictValue("-1").setDictDesc("顶级目录")
-				.setSort(0).setDefMark(false));
-		return menus;
-	}
+    @Operation(summary = "树结构：资源菜单")
+    @GetMapping("extdict")
+    public List<DictDTO> qryDictMenu(SysMenuQuery query) {
+        List<DictDTO> menus = this.sysMenuRepository.qryDictMenu(query);
+        menus
+            .add(new DictDTO().setDictCode("menu").setDictValue("-1").setDictDesc("顶级目录").setSort(0).setDefMark(false));
+        return menus;
+    }
 
-	/**
-	 * 根据ID查询
-	 * @param sid {@code Serializable } 主键编号
-	 * @return {@link AbstractResult} 响应结果
-	 */
-	@Operation(summary = "数据查询：主键编号")
-	@GetMapping("{sid}")
-	@ResponseStatus(code = HttpStatus.OK)
-	public SysMenuDetailDTO findById(@PathVariable("sid") Long sid) {
-		return sysMenuToDtoAssembler.convert(Optional
-				.ofNullable(this.sysMenuRepository.getById(sid)).orElse(new SysMenuDO()));
-	}
+    /**
+     * 根据ID查询
+     * @param sid {@code Serializable } 主键编号
+     * @return {@link AbstractResult} 响应结果
+     */
+    @Operation(summary = "数据查询：主键编号")
+    @GetMapping("{sid}")
+    @ResponseStatus(code = HttpStatus.OK)
+    public SysMenuDetailDTO findById(@PathVariable("sid") Long sid) {
+        return sysMenuToDtoAssembler
+            .convert(Optional.ofNullable(this.sysMenuRepository.getById(sid)).orElse(new SysMenuDO()));
+    }
 
-	/**
-	 * 删除数据
-	 * @param sid {@code Serializable} 主键编号
-	 * @return {@link Boolean>} 响应结果
-	 */
-	@Operation(summary = "数据删除：主键编号")
-	@DeleteMapping("{sid}")
-	@ResponseStatus(code = HttpStatus.OK)
-	public Boolean removeById(@PathVariable Long sid) {
-		return this.sysMenuRepository.removeById(sid);
-	}
+    /**
+     * 删除数据
+     * @param sid {@code Serializable} 主键编号
+     * @return {@link Boolean>} 响应结果
+     */
+    @Operation(summary = "数据删除：主键编号")
+    @DeleteMapping("{sid}")
+    @ResponseStatus(code = HttpStatus.OK)
+    public Boolean removeById(@PathVariable Long sid) {
+        return this.sysMenuRepository.removeById(sid);
+    }
 
-	/**
-	 * 新增数据
-	 * @param sysMenuDO 数据对象
-	 * @return {@link Boolean>} 响应结果
-	 */
-	@Operation(summary = "数据新增")
-	@PostMapping
-	@ResponseStatus(code = HttpStatus.CREATED)
-	public Boolean save(@Validated @RequestBody SysMenuDO sysMenuDO) {
-		return this.sysMenuRepository.save(sysMenuDO);
-	}
+    /**
+     * 新增数据
+     * @param sysMenuDO 数据对象
+     * @return {@link Boolean>} 响应结果
+     */
+    @Operation(summary = "数据新增")
+    @PostMapping
+    @ResponseStatus(code = HttpStatus.CREATED)
+    public Boolean save(@Validated @RequestBody SysMenuDO sysMenuDO) {
+        return this.sysMenuRepository.save(sysMenuDO);
+    }
 
-	/**
-	 * 更新数据
-	 * <p>
-	 * 全量更新数据
-	 * </p>
-	 * @param sysMenuDO 数据对象
-	 * @return {@link Boolean>} 响应结果
-	 */
-	@Operation(summary = "数据更新：主键编号")
-	@PutMapping("{sid}")
-	public Boolean updateById(@PathVariable("sid") Long sid,
-			@Validated @RequestBody SysMenuDO sysMenuDO) {
-		sysMenuDO.setSid(sid);
-		return this.sysMenuRepository.updateById(sysMenuDO);
-	}
+    /**
+     * 更新数据
+     * <p>
+     * 全量更新数据
+     * </p>
+     * @param sysMenuDO 数据对象
+     * @return {@link Boolean>} 响应结果
+     */
+    @Operation(summary = "数据更新：主键编号")
+    @PutMapping("{sid}")
+    public Boolean updateById(@PathVariable("sid") Long sid, @Validated @RequestBody SysMenuDO sysMenuDO) {
+        sysMenuDO.setSid(sid);
+        return this.sysMenuRepository.updateById(sysMenuDO);
+    }
 
 }

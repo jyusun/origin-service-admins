@@ -23,32 +23,32 @@ import lombok.Data;
 @TableName("t001_sys_dict")
 public class SysDictDO extends BaseData {
 
-	/**
-	 * 主键ID
-	 */
-	@Schema(description = "主键编号")
-	@TableId(value = "sid", type = IdType.ASSIGN_ID)
-	private Long sid;
+    /**
+     * 主键ID
+     */
+    @Schema(description = "主键编号")
+    @TableId(value = "sid", type = IdType.ASSIGN_ID)
+    private Long sid;
 
-	/**
-	 * 类型编号
-	 */
-	@Schema(description = "类型编号")
-	@TableField("dict_code")
-	private String dictCode;
+    /**
+     * 类型编号
+     */
+    @Schema(description = "类型编号")
+    @TableField("dict_code")
+    private String dictCode;
 
-	/**
-	 * 类型名称
-	 */
-	@Schema(description = "类型名称")
-	@TableField("dict_name")
-	private String dictName;
+    /**
+     * 类型名称
+     */
+    @Schema(description = "类型名称")
+    @TableField("dict_name")
+    private String dictName;
 
-	/**
-	 * 类型排序
-	 */
-	@Schema(description = "类型排序")
-	@TableField("sort")
-	private Integer sort;
+    /**
+     * 类型排序
+     */
+    @Schema(description = "类型排序")
+    @TableField("sort")
+    private Integer sort;
 
 }

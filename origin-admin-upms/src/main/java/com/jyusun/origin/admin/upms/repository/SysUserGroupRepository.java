@@ -15,18 +15,18 @@ import java.util.List;
  */
 public interface SysUserGroupRepository extends CoreRepository<SysUserGroupDO> {
 
-	/**
-	 * 树查询
-	 * @param query 分组查询
-	 * @return {@link List< SysUserGroupDTO >}
-	 */
-	List<SysUserGroupDTO> listTree(UserGroupQuery query);
+    /**
+     * 树查询
+     * @param query 分组查询
+     * @return {@link List< SysUserGroupDTO >}
+     */
+    List<SysUserGroupDTO> listTree(UserGroupQuery query);
 
-	/**
-	 * 列表查询
-	 * @param query 分组查询
-	 * @return {@link List< SysUserGroupDTO >}
-	 */
-	List<SysUserGroupDTO> listGroup(UserGroupQuery query);
+    /**
+     * 列表查询
+     * @param query 分组查询
+     * @return {@link List< SysUserGroupDTO >}
+     */
+    List<SysUserGroupDTO> listGroup(UserGroupQuery query);
 
 }

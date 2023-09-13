@@ -13,8 +13,7 @@ import org.springframework.stereotype.Repository;
  * @since 1.0.0
  */
 @Repository
-public class SysRsrcGroupRepositoryImpl
-		extends CoreRepositoryImpl<SysRsrcGroupMapper, SysRsrcGroupDO>
-		implements SysRsrcGroupRepository {
+public class SysRsrcGroupRepositoryImpl extends CoreRepositoryImpl<SysRsrcGroupMapper, SysRsrcGroupDO>
+        implements SysRsrcGroupRepository {
 
 }

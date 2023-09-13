@@ -29,18 +29,18 @@ import java.util.List;
 @RequiredArgsConstructor
 public class SysUserGroupController {
 
-	private final SysUserGroupRepository sysUserGroupRepository;
+    private final SysUserGroupRepository sysUserGroupRepository;
 
-	/**
-	 * 列表分页查询
-	 * @param query {@link UserGroupQuery} 查询对象
-	 * @return {@link AbstractResult} 响应结果
-	 */
-	@Operation(summary = "列表查询")
-	@GetMapping("query")
-	@SysLogger(operType = OperTypeEnum.DETAIL)
-	public List<SysUserGroupDTO> queryGroup(UserGroupQuery query) {
-		return this.sysUserGroupRepository.listGroup(query);
-	}
+    /**
+     * 列表分页查询
+     * @param query {@link UserGroupQuery} 查询对象
+     * @return {@link AbstractResult} 响应结果
+     */
+    @Operation(summary = "列表查询")
+    @GetMapping("query")
+    @SysLogger(operType = OperTypeEnum.DETAIL)
+    public List<SysUserGroupDTO> queryGroup(UserGroupQuery query) {
+        return this.sysUserGroupRepository.listGroup(query);
+    }
 
 }

@@ -22,22 +22,20 @@ import java.util.List;
  * @since 1.0.0
  */
 @Repository
-public class SysMenuRepositoryImpl extends CoreRepositoryImpl<SysMenuMapper, SysMenuDO>
-		implements SysMenuRepository {
+public class SysMenuRepositoryImpl extends CoreRepositoryImpl<SysMenuMapper, SysMenuDO> implements SysMenuRepository {
 
-	@Override
-	public PageObject<SysMenuTreeDTO> pageTrees(PageQuery pageQuery, SysMenuQuery query) {
-		return PageUtil.dataInfo(
-				this.baseMapper.pageTrees(ConditionUtil.pageInfo(pageQuery), query));
-	}
+    @Override
+    public PageObject<SysMenuTreeDTO> pageTrees(PageQuery pageQuery, SysMenuQuery query) {
+        return PageUtil.dataInfo(this.baseMapper.pageTrees(ConditionUtil.pageInfo(pageQuery), query));
+    }
 
-	/**
-	 * 菜单树
-	 * @return
-	 */
-	@Override
-	public List<DictDTO> qryDictMenu(SysMenuQuery query) {
-		return this.baseMapper.listDictMenu(query);
-	}
+    /**
+     * 菜单树
+     * @return
+     */
+    @Override
+    public List<DictDTO> qryDictMenu(SysMenuQuery query) {
+        return this.baseMapper.listDictMenu(query);
+    }
 
 }

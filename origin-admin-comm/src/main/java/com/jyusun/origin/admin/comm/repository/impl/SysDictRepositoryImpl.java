@@ -13,7 +13,6 @@ import org.springframework.stereotype.Repository;
  * @since 1.0.0
  */
 @Repository
-public class SysDictRepositoryImpl extends CoreRepositoryImpl<SysDictMapper, SysDictDO>
-		implements SysDictRepository {
+public class SysDictRepositoryImpl extends CoreRepositoryImpl<SysDictMapper, SysDictDO> implements SysDictRepository {
 
 }

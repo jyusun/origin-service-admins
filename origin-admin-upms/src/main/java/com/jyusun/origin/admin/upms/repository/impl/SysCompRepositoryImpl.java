@@ -13,7 +13,6 @@ import org.springframework.stereotype.Repository;
  * @since 1.0.0
  */
 @Repository
-public class SysCompRepositoryImpl extends CoreRepositoryImpl<SysCompMapper, SysCompDO>
-		implements SysCompRepository {
+public class SysCompRepositoryImpl extends CoreRepositoryImpl<SysCompMapper, SysCompDO> implements SysCompRepository {
 
 }

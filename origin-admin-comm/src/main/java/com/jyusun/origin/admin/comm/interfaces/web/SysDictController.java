@@ -21,8 +21,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("dict/types")
 public class SysDictController extends BaseController<SysDictRepository, SysDictDO> {
 
-	public SysDictController(SysDictRepository originRepository) {
-		super(originRepository);
-	}
+    public SysDictController(SysDictRepository originRepository) {
+        super(originRepository);
+    }
 
 }

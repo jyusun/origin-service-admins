@@ -20,8 +20,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("roles")
 public class SysRoleController extends BaseController<SysRoleRepository, SysRoleDO> {
 
-	public SysRoleController(SysRoleRepository originRepository) {
-		super(originRepository);
-	}
+    public SysRoleController(SysRoleRepository originRepository) {
+        super(originRepository);
+    }
 
 }

@@ -14,6 +14,6 @@ import org.springframework.stereotype.Repository;
  */
 @Repository
 public class SysParamRepositoryImpl extends CoreRepositoryImpl<SysParamMapper, SysParamDO>
-		implements SysParamRepository {
+        implements SysParamRepository {
 
 }

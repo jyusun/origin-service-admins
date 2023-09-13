@@ -14,12 +14,11 @@ import org.springframework.stereotype.Component;
 @Component
 public class MenuToDtoAssembler implements Converter<SysMenuDO, SysMenuDetailDTO> {
 
-	@Override
-	public SysMenuDetailDTO convert(SysMenuDO source) {
-		SysMenuDetailDTO sysMenuDetailDTO = BeanUtil.copyProperties(source,
-				SysMenuDetailDTO.class);
-		BeanUtil.copyProperties(source.getMeta(), sysMenuDetailDTO);
-		return sysMenuDetailDTO;
-	}
+    @Override
+    public SysMenuDetailDTO convert(SysMenuDO source) {
+        SysMenuDetailDTO sysMenuDetailDTO = BeanUtil.copyProperties(source, SysMenuDetailDTO.class);
+        BeanUtil.copyProperties(source.getMeta(), sysMenuDetailDTO);
+        return sysMenuDetailDTO;
+    }
 
 }

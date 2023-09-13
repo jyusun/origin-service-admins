@@ -18,12 +18,12 @@ import java.util.List;
  */
 public interface SysMenuRepository extends CoreRepository<SysMenuDO> {
 
-	PageObject<SysMenuTreeDTO> pageTrees(PageQuery pageQuery, SysMenuQuery query);
+    PageObject<SysMenuTreeDTO> pageTrees(PageQuery pageQuery, SysMenuQuery query);
 
-	/**
-	 * 菜单树
-	 * @return
-	 */
-	List<DictDTO> qryDictMenu(SysMenuQuery query);
+    /**
+     * 菜单树
+     * @return
+     */
+    List<DictDTO> qryDictMenu(SysMenuQuery query);
 
 }

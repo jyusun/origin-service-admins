@@ -20,8 +20,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("posts")
 public class SysPostController extends BaseController<SysPostRepository, SysPostDO> {
 
-	public SysPostController(SysPostRepository originRepository) {
-		super(originRepository);
-	}
+    public SysPostController(SysPostRepository originRepository) {
+        super(originRepository);
+    }
 
 }

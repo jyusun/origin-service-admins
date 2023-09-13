@@ -13,7 +13,6 @@ import org.springframework.stereotype.Repository;
  * @since 1.0.0
  */
 @Repository
-public class SysUserRepositoryImpl extends CoreRepositoryImpl<SysUserMapper, SysUserDO>
-		implements SysUserRepository {
+public class SysUserRepositoryImpl extends CoreRepositoryImpl<SysUserMapper, SysUserDO> implements SysUserRepository {
 
 }

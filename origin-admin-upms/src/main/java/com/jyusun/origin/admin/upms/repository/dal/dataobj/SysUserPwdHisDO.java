@@ -27,21 +27,21 @@ import lombok.experimental.Accessors;
 @TableName("t001_his_password")
 public class SysUserPwdHisDO extends BaseCreate {
 
-	private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
 
-	/**
-	 * 主键ID
-	 */
-	@Schema(description = "主键编号")
-	@TableId(value = "sid", type = IdType.ASSIGN_ID)
-	private Long sid;
+    /**
+     * 主键ID
+     */
+    @Schema(description = "主键编号")
+    @TableId(value = "sid", type = IdType.ASSIGN_ID)
+    private Long sid;
 
-	@Schema(description = "用户编号")
-	@TableField("uid")
-	private Long uid;
+    @Schema(description = "用户编号")
+    @TableField("uid")
+    private Long uid;
 
-	@Schema(description = "用户密码")
-	@TableField("password")
-	private String password;
+    @Schema(description = "用户密码")
+    @TableField("password")
+    private String password;
 
 }

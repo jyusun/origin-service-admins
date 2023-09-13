@@ -13,28 +13,28 @@ import lombok.Data;
 @Data
 public class SysMenuQuery implements BaseQuery {
 
-	@Schema(description = "名称")
-	private String oname;
+    @Schema(description = "名称")
+    private String oname;
 
-	/**
-	 * 父级编号
-	 */
-	@Schema(description = "父级编号")
-	private String parentCode;
+    /**
+     * 父级编号
+     */
+    @Schema(description = "父级编号")
+    private String parentCode;
 
-	/**
-	 * 启用关闭
-	 */
-	@Schema(description = "启用关闭")
-	private Boolean enabled;
+    /**
+     * 启用关闭
+     */
+    @Schema(description = "启用关闭")
+    private Boolean enabled;
 
-	public SysMenuQuery() {
-		this.init();
-	}
+    public SysMenuQuery() {
+        this.init();
+    }
 
-	private void init() {
-		this.enabled = true;
-		this.parentCode = "-1";
-	}
+    private void init() {
+        this.enabled = true;
+        this.parentCode = "-1";
+    }
 
 }

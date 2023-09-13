@@ -15,6 +15,6 @@ import com.jyusun.origin.admin.upms.interfaces.facade.model.qry.SysTreeQuery;
  */
 public interface SysDebtRepository extends CoreRepository<SysDebtDO> {
 
-	PageObject<SysCompDebtDTO> listCompDebtTree(PageQuery pageQuery, SysTreeQuery query);
+    PageObject<SysCompDebtDTO> listCompDebtTree(PageQuery pageQuery, SysTreeQuery query);
 
 }
