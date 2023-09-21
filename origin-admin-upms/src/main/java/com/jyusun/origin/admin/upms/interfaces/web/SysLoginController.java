@@ -1,8 +1,8 @@
 package com.jyusun.origin.admin.upms.interfaces.web;
 
-import com.jyusun.origin.admin.upms.repository.dal.dataobj.SysUserDO;
-import com.jyusun.origin.admin.upms.repository.SysUserRepository;
 import com.jyusun.origin.admin.upms.interfaces.facade.model.cmd.UserRegisterCmd;
+import com.jyusun.origin.admin.upms.repository.SysUserRepository;
+import com.jyusun.origin.admin.upms.repository.dal.dataobj.SysUserDO;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;

@@ -19,7 +19,7 @@ public class SysUserGroupDTO extends BaseTreeDTO<SysUserGroupDTO> implements Bas
     private static final long serialVersionUID = 1L;
 
     @Schema(description = "分组编号")
-    private Long sid;
+    private Long oid;
 
     /**
      * 名称

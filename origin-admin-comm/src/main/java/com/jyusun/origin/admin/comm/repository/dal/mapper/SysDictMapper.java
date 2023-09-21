@@ -1,7 +1,7 @@
 package com.jyusun.origin.admin.dict.repository.dal.mapper;
 
-import com.jyusun.origin.base.mybatis.CoreMapper;
 import com.jyusun.origin.admin.dict.repository.dal.dataobj.SysDictDO;
+import com.jyusun.origin.base.mybatis.CoreMapper;
 import org.apache.ibatis.annotations.Mapper;
 
 /**

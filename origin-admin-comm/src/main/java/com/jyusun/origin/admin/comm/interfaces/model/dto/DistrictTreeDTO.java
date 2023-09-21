@@ -22,7 +22,7 @@ public class DistrictTreeDTO extends BaseTreeDTO<DistrictTreeDTO> implements Bas
      * 主键ID
      */
     @Schema(description = "主键编号")
-    protected Long sid;
+    protected Long oid;
 
     /**
      * 编号

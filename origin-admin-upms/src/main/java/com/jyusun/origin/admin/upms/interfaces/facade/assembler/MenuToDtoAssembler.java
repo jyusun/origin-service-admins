@@ -1,8 +1,8 @@
 package com.jyusun.origin.admin.upms.interfaces.facade.assembler;
 
+import com.jyusun.origin.admin.upms.interfaces.facade.model.dto.SysMenuDetailDTO;
 import com.jyusun.origin.admin.upms.repository.dal.dataobj.SysMenuDO;
 import com.jyusun.origin.core.common.util.BeanUtil;
-import com.jyusun.origin.admin.upms.interfaces.facade.model.dto.SysMenuDetailDTO;
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.stereotype.Component;
 

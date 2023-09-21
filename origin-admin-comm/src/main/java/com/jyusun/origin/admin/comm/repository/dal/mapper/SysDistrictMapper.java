@@ -1,10 +1,10 @@
 package com.jyusun.origin.admin.comm.repository.dal.mapper;
 
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import com.jyusun.origin.admin.comm.repository.dal.dataobj.SysDistrictDO;
-import com.jyusun.origin.base.mybatis.CoreMapper;
 import com.jyusun.origin.admin.comm.interfaces.model.dto.DistrictTreeDTO;
 import com.jyusun.origin.admin.comm.interfaces.model.qry.SysDistrictQuery;
+import com.jyusun.origin.admin.comm.repository.dal.dataobj.SysDistrictDO;
+import com.jyusun.origin.base.mybatis.CoreMapper;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 

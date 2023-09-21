@@ -24,7 +24,7 @@ public class SysDebtTreeValue extends BaseTreeDTO<SysDebtTreeValue> implements B
      * 主键编号
      */
     @Schema(description = "主键编号")
-    private Long sid;
+    private Long oid;
 
     /**
      * 名称

@@ -1,12 +1,12 @@
 package com.jyusun.origin.admin.upms.repository;
 
+import com.jyusun.origin.admin.upms.interfaces.facade.model.dto.SysMenuTreeDTO;
+import com.jyusun.origin.admin.upms.interfaces.facade.model.qry.SysMenuQuery;
 import com.jyusun.origin.admin.upms.repository.dal.dataobj.SysMenuDO;
 import com.jyusun.origin.base.mybatis.CoreRepository;
 import com.jyusun.origin.core.common.model.DictDTO;
 import com.jyusun.origin.core.common.model.page.PageObject;
 import com.jyusun.origin.core.common.model.page.PageQuery;
-import com.jyusun.origin.admin.upms.interfaces.facade.model.dto.SysMenuTreeDTO;
-import com.jyusun.origin.admin.upms.interfaces.facade.model.qry.SysMenuQuery;
 
 import java.util.List;
 

@@ -1,11 +1,11 @@
 package com.jyusun.origin.admin.upms.repository.impl;
 
-import com.jyusun.origin.base.mybatis.CoreRepositoryImpl;
-import com.jyusun.origin.admin.upms.repository.dal.dataobj.SysUserGroupDO;
-import com.jyusun.origin.admin.upms.repository.SysUserGroupRepository;
-import com.jyusun.origin.admin.upms.repository.dal.mapper.SysUserGroupMapper;
 import com.jyusun.origin.admin.upms.interfaces.facade.model.dto.SysUserGroupDTO;
 import com.jyusun.origin.admin.upms.interfaces.facade.model.qry.UserGroupQuery;
+import com.jyusun.origin.admin.upms.repository.SysUserGroupRepository;
+import com.jyusun.origin.admin.upms.repository.dal.dataobj.SysUserGroupDO;
+import com.jyusun.origin.admin.upms.repository.dal.mapper.SysUserGroupMapper;
+import com.jyusun.origin.base.mybatis.CoreRepositoryImpl;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;

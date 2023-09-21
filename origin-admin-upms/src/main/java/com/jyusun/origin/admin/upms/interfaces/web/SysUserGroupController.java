@@ -1,11 +1,11 @@
 package com.jyusun.origin.admin.upms.interfaces.web;
 
+import com.jyusun.origin.admin.upms.interfaces.facade.model.dto.SysUserGroupDTO;
+import com.jyusun.origin.admin.upms.interfaces.facade.model.qry.UserGroupQuery;
+import com.jyusun.origin.admin.upms.repository.SysUserGroupRepository;
 import com.jyusun.origin.base.logger.annotation.SysLogger;
 import com.jyusun.origin.base.logger.common.enums.OperTypeEnum;
 import com.jyusun.origin.core.common.model.result.AbstractResult;
-import com.jyusun.origin.admin.upms.repository.SysUserGroupRepository;
-import com.jyusun.origin.admin.upms.interfaces.facade.model.dto.SysUserGroupDTO;
-import com.jyusun.origin.admin.upms.interfaces.facade.model.qry.UserGroupQuery;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;

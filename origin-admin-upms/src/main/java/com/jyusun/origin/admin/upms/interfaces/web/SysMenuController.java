@@ -1,15 +1,15 @@
 package com.jyusun.origin.admin.upms.interfaces.web;
 
-import com.jyusun.origin.core.common.model.DictDTO;
-import com.jyusun.origin.core.common.model.page.PageObject;
-import com.jyusun.origin.core.common.model.page.PageQuery;
-import com.jyusun.origin.core.common.model.result.AbstractResult;
-import com.jyusun.origin.admin.upms.repository.dal.dataobj.SysMenuDO;
-import com.jyusun.origin.admin.upms.repository.SysMenuRepository;
 import com.jyusun.origin.admin.upms.interfaces.facade.assembler.MenuToDtoAssembler;
 import com.jyusun.origin.admin.upms.interfaces.facade.model.dto.SysMenuDetailDTO;
 import com.jyusun.origin.admin.upms.interfaces.facade.model.dto.SysMenuTreeDTO;
 import com.jyusun.origin.admin.upms.interfaces.facade.model.qry.SysMenuQuery;
+import com.jyusun.origin.admin.upms.repository.SysMenuRepository;
+import com.jyusun.origin.admin.upms.repository.dal.dataobj.SysMenuDO;
+import com.jyusun.origin.core.common.model.DictDTO;
+import com.jyusun.origin.core.common.model.page.PageObject;
+import com.jyusun.origin.core.common.model.page.PageQuery;
+import com.jyusun.origin.core.common.model.result.AbstractResult;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
@@ -63,27 +63,27 @@ public class SysMenuController {
 
     /**
      * 根据ID查询
-     * @param sid {@code Serializable } 主键编号
+     * @param oid {@code Serializable } 主键编号
      * @return {@link AbstractResult} 响应结果
      */
     @Operation(summary = "数据查询：主键编号")
-    @GetMapping("{sid}")
+    @GetMapping("{oid}")
     @ResponseStatus(code = HttpStatus.OK)
-    public SysMenuDetailDTO findById(@PathVariable("sid") Long sid) {
+    public SysMenuDetailDTO findById(@PathVariable("oid") Long oid) {
         return sysMenuToDtoAssembler
-            .convert(Optional.ofNullable(this.sysMenuRepository.getById(sid)).orElse(new SysMenuDO()));
+            .convert(Optional.ofNullable(this.sysMenuRepository.getById(oid)).orElse(new SysMenuDO()));
     }
 
     /**
      * 删除数据
-     * @param sid {@code Serializable} 主键编号
+     * @param oid {@code Serializable} 主键编号
      * @return {@link Boolean>} 响应结果
      */
     @Operation(summary = "数据删除：主键编号")
-    @DeleteMapping("{sid}")
+    @DeleteMapping("{oid}")
     @ResponseStatus(code = HttpStatus.OK)
-    public Boolean removeById(@PathVariable Long sid) {
-        return this.sysMenuRepository.removeById(sid);
+    public Boolean removeById(@PathVariable Long oid) {
+        return this.sysMenuRepository.removeById(oid);
     }
 
     /**
@@ -107,9 +107,9 @@ public class SysMenuController {
      * @return {@link Boolean>} 响应结果
      */
     @Operation(summary = "数据更新：主键编号")
-    @PutMapping("{sid}")
-    public Boolean updateById(@PathVariable("sid") Long sid, @Validated @RequestBody SysMenuDO sysMenuDO) {
-        sysMenuDO.setSid(sid);
+    @PutMapping("{oid}")
+    public Boolean updateById(@PathVariable("oid") Long oid, @Validated @RequestBody SysMenuDO sysMenuDO) {
+        sysMenuDO.setOid(oid);
         return this.sysMenuRepository.updateById(sysMenuDO);
     }
 

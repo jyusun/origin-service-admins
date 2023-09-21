@@ -5,8 +5,8 @@ import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.baomidou.mybatisplus.extension.handlers.FastjsonTypeHandler;
-import com.jyusun.origin.base.mybatis.data.BaseData;
 import com.jyusun.origin.admin.upms.interfaces.facade.model.dto.MenuMetaValue;
+import com.jyusun.origin.base.mybatis.data.BaseData;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -33,8 +33,8 @@ public class SysMenuDO extends BaseData {
      * 主键ID
      */
     @Schema(description = "主键编号")
-    @TableId(value = "sid", type = IdType.ASSIGN_ID)
-    private Long sid;
+    @TableId(value = "oid", type = IdType.ASSIGN_ID)
+    private Long oid;
 
     /**
      * 菜单类型;1-目录|2-菜单|3-按钮

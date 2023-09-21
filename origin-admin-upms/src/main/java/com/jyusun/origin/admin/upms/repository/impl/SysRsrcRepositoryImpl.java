@@ -1,9 +1,9 @@
 package com.jyusun.origin.admin.upms.repository.impl;
 
-import com.jyusun.origin.base.mybatis.CoreRepositoryImpl;
-import com.jyusun.origin.admin.upms.repository.dal.dataobj.SysRsrcDO;
 import com.jyusun.origin.admin.upms.repository.SysRsrcRepository;
+import com.jyusun.origin.admin.upms.repository.dal.dataobj.SysRsrcDO;
 import com.jyusun.origin.admin.upms.repository.dal.mapper.SysRsrcMapper;
+import com.jyusun.origin.base.mybatis.CoreRepositoryImpl;
 import org.springframework.stereotype.Repository;
 
 /**

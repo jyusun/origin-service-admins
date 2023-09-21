@@ -1,9 +1,9 @@
 package com.jyusun.origin.admin.comm.repository.impl;
 
-import com.jyusun.origin.base.mybatis.CoreRepositoryImpl;
-import com.jyusun.origin.admin.comm.repository.dal.dataobj.SysParamDO;
 import com.jyusun.origin.admin.comm.repository.SysParamRepository;
+import com.jyusun.origin.admin.comm.repository.dal.dataobj.SysParamDO;
 import com.jyusun.origin.admin.comm.repository.dal.mapper.SysParamMapper;
+import com.jyusun.origin.base.mybatis.CoreRepositoryImpl;
 import org.springframework.stereotype.Repository;
 
 /**

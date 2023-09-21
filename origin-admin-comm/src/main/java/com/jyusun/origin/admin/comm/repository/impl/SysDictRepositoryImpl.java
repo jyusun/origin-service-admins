@@ -1,9 +1,9 @@
 package com.jyusun.origin.admin.comm.repository.impl;
 
 import com.jyusun.origin.admin.comm.repository.SysDictRepository;
-import com.jyusun.origin.base.mybatis.CoreRepositoryImpl;
 import com.jyusun.origin.admin.dict.repository.dal.dataobj.SysDictDO;
 import com.jyusun.origin.admin.dict.repository.dal.mapper.SysDictMapper;
+import com.jyusun.origin.base.mybatis.CoreRepositoryImpl;
 import org.springframework.stereotype.Repository;
 
 /**

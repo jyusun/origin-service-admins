@@ -1,9 +1,9 @@
 package com.jyusun.origin.admin.upms.repository.dal.mapper;
 
-import com.jyusun.origin.admin.upms.repository.dal.dataobj.SysRoleDO;
-import com.jyusun.origin.base.mybatis.CoreMapper;
 import com.jyusun.origin.admin.upms.interfaces.facade.model.dto.SysRoleTreeDTO;
 import com.jyusun.origin.admin.upms.interfaces.facade.model.qry.SysTreeQuery;
+import com.jyusun.origin.admin.upms.repository.dal.dataobj.SysRoleDO;
+import com.jyusun.origin.base.mybatis.CoreMapper;
 
 import java.util.List;
 

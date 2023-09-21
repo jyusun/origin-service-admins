@@ -4,7 +4,7 @@
 
     <!-- 树模型结果 -->
     <resultMap id="tree_result" type="com.jyusun.origin.admin.comm.interfaces.model.dto.DistrictTreeDTO">
-        <id column="sid" property="sid"/>
+        <id column="oid" property="oid"/>
         <result column="district_code" property="districtCode"/>
         <result column="district_name" property="districtName"/>
         <result column="district_type" property="districtType"/>
@@ -26,7 +26,7 @@
         district_type,
         parent_code,
         sort,
-        sid,
+        oid,
         create_by,
         create_time
     </sql>

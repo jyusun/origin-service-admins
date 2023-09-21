@@ -2,6 +2,9 @@ package com.jyusun.origin.admin.upms.interfaces.web;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
+import com.jyusun.origin.admin.upms.interfaces.facade.model.qry.UserInfoQuery;
+import com.jyusun.origin.admin.upms.repository.SysUserRepository;
+import com.jyusun.origin.admin.upms.repository.dal.dataobj.SysUserDO;
 import com.jyusun.origin.base.logger.annotation.SysLogger;
 import com.jyusun.origin.base.logger.common.enums.OperTypeEnum;
 import com.jyusun.origin.base.mybatis.common.util.PageUtil;
@@ -12,9 +15,6 @@ import com.jyusun.origin.core.common.model.result.AbstractResult;
 import com.jyusun.origin.core.common.model.result.ResultFactory;
 import com.jyusun.origin.core.common.util.StringUtil;
 import com.jyusun.origin.core.common.util.UuidUtil;
-import com.jyusun.origin.admin.upms.repository.dal.dataobj.SysUserDO;
-import com.jyusun.origin.admin.upms.interfaces.facade.model.qry.UserInfoQuery;
-import com.jyusun.origin.admin.upms.repository.SysUserRepository;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
@@ -60,14 +60,14 @@ public class SysUserController {
 
     /**
      * 数据编辑
-     * @param sid {@link SysUserDO} 主键编号.
+     * @param oid {@link SysUserDO} 主键编号.
      * @return {@link AbstractResult} 响应结果
      */
     @Operation(summary = "数据查询：主键编号", method = "get")
-    @GetMapping("{sid}")
+    @GetMapping("{oid}")
     @SysLogger(operType = OperTypeEnum.DETAIL)
-    public SysUserDO findById(@PathVariable("sid") Long sid) {
-        return sysUserRepository.getById(sid);
+    public SysUserDO findById(@PathVariable("oid") Long oid) {
+        return sysUserRepository.getById(oid);
     }
 
     /**
@@ -88,9 +88,9 @@ public class SysUserController {
      * @return {@link AbstractResult} 响应结果
      */
     @Operation(summary = "数据编辑", method = "put")
-    @PutMapping("{sid}")
-    public Boolean edit(@PathVariable Long sid, @RequestBody SysUserDO userInfo) {
-        userInfo.setSid(sid);
+    @PutMapping("{oid}")
+    public Boolean edit(@PathVariable Long oid, @RequestBody SysUserDO userInfo) {
+        userInfo.setOid(oid);
         return userInfo.updateById();
     }
 
@@ -107,13 +107,13 @@ public class SysUserController {
 
     /**
      * 数据编辑
-     * @param sid {@link Long} 主键编号
+     * @param oid {@link Long} 主键编号
      * @return {@link AbstractResult} 响应结果
      */
     @Operation(summary = "数据删除：主键编号", method = "delete")
-    @DeleteMapping("{sid}")
-    public Boolean removeById(@PathVariable Long sid) {
-        return sysUserRepository.removeById(sid);
+    @DeleteMapping("{oid}")
+    public Boolean removeById(@PathVariable Long oid) {
+        return sysUserRepository.removeById(oid);
     }
 
 }

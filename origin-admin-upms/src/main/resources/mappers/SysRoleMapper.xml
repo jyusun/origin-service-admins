@@ -4,9 +4,9 @@
 
     <!-- 树模型结果 -->
     <resultMap id="tree_result" type="com.jyusun.origin.admin.upms.interfaces.facade.model.dto.SysRoleTreeDTO">
-        <id column="sid" property="sid"/>
-        <result column="zhname" property="zhname"/>
-        <result column="enname" property="enname"/>
+        <id column="oid" property="oid"/>
+        <result column="zhname" property="oname"/>
+        <result column="ocode" property="ocode"/>
         <result column="sort" property="sort"/>
         <result column="parent_id" property="parentId"/>
         <result column="tenant_id" property="tenantId"/>
@@ -16,18 +16,17 @@
 
         <collection property="children" javaType="java.util.ArrayList"
                     ofType="com.jyusun.origin.admin.upms.interfaces.facade.model.dto.SysRoleTreeDTO"
-                    column="sid" select="listTree"/>
+                    column="oid" select="listTree"/>
     </resultMap>
 
     <!-- 基础列 -->
     <sql id="base_column">
-        zhname
-        ,
-        enname,
+        oname,
+        ocode,
         sort,
         parent_id,
         tenant_id,
-        sid,
+        oid,
         update_by,
         update_time
     </sql>

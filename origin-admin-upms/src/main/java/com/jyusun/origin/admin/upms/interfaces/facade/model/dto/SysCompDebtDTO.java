@@ -18,7 +18,7 @@ public class SysCompDebtDTO implements BaseDTO {
     private static final long serialVersionUID = 1L;
 
     @Schema(description = "公司编号")
-    private Long sid;
+    private Long oid;
 
     /**
      * 名称

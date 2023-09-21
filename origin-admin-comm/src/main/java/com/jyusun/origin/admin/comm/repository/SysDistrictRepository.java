@@ -1,11 +1,11 @@
 package com.jyusun.origin.admin.comm.repository;
 
+import com.jyusun.origin.admin.comm.interfaces.model.dto.DistrictTreeDTO;
+import com.jyusun.origin.admin.comm.interfaces.model.qry.SysDistrictQuery;
 import com.jyusun.origin.admin.comm.repository.dal.dataobj.SysDistrictDO;
 import com.jyusun.origin.base.mybatis.CoreRepository;
 import com.jyusun.origin.core.common.model.page.PageObject;
 import com.jyusun.origin.core.common.model.page.PageQuery;
-import com.jyusun.origin.admin.comm.interfaces.model.dto.DistrictTreeDTO;
-import com.jyusun.origin.admin.comm.interfaces.model.qry.SysDistrictQuery;
 
 /**
  * 作用描述：系统参数

@@ -2,12 +2,12 @@ package com.jyusun.origin.admin.upms.interfaces.remote.provider;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
-import com.jyusun.origin.admin.upms.repository.SysAuthRepository;
-import com.jyusun.origin.admin.upms.repository.SysUserRepository;
-import com.jyusun.origin.admin.upms.repository.dal.dataobj.SysUserDO;
 import com.jyusun.origin.admin.client.upms.api.SysUserApi;
 import com.jyusun.origin.admin.client.upms.model.SysUserDTO;
 import com.jyusun.origin.admin.client.upms.model.SysUserRegisterDTO;
+import com.jyusun.origin.admin.upms.repository.SysAuthRepository;
+import com.jyusun.origin.admin.upms.repository.SysUserRepository;
+import com.jyusun.origin.admin.upms.repository.dal.dataobj.SysUserDO;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -48,10 +48,10 @@ public class SysUserProvider implements SysUserApi {
         LambdaQueryWrapper<SysUserDO> wrapper = Wrappers.lambdaQuery();
         wrapper.eq(SysUserDO::getUsername, username);
         SysUserDO sysUserDO = Optional.ofNullable(sysUserRepository.getOne(wrapper)).orElse(new SysUserDO());
-        Set<String> roles = sysAuthRepository.findRoleByUserId(sysUserDO.getSid());
+        Set<String> roles = sysAuthRepository.findRoleByUserId(sysUserDO.getOid());
         Set<String> permissions = sysAuthRepository.findRsrcPermissionByRoles(roles);
 
-        return new SysUserDTO().setUserId(sysUserDO.getSid())
+        return new SysUserDTO().setUserId(sysUserDO.getOid())
             .setUsername(sysUserDO.getUsername())
             .setPassword(sysUserDO.getPassword())
             .setEnabled(sysUserDO.getEnabled())

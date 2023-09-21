@@ -2,7 +2,6 @@ package com.jyusun.origin.admin.upms.infra.common.enums;
 
 import com.jyusun.origin.core.common.model.BaseKvEnum;
 import lombok.AllArgsConstructor;
-import lombok.RequiredArgsConstructor;
 
 /**
  * 用户状态

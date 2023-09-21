@@ -1,7 +1,7 @@
 package com.jyusun.origin.admin.comm.repository;
 
-import com.jyusun.origin.base.mybatis.CoreRepository;
 import com.jyusun.origin.admin.dict.repository.dal.dataobj.SysDictDO;
+import com.jyusun.origin.base.mybatis.CoreRepository;
 
 /**
  * 作用描述：字典类型

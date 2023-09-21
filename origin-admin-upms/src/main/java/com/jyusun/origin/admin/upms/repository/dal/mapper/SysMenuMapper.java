@@ -1,11 +1,11 @@
 package com.jyusun.origin.admin.upms.repository.dal.mapper;
 
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.jyusun.origin.admin.upms.interfaces.facade.model.dto.SysMenuTreeDTO;
+import com.jyusun.origin.admin.upms.interfaces.facade.model.qry.SysMenuQuery;
 import com.jyusun.origin.admin.upms.repository.dal.dataobj.SysMenuDO;
 import com.jyusun.origin.base.mybatis.CoreMapper;
 import com.jyusun.origin.core.common.model.DictDTO;
-import com.jyusun.origin.admin.upms.interfaces.facade.model.dto.SysMenuTreeDTO;
-import com.jyusun.origin.admin.upms.interfaces.facade.model.qry.SysMenuQuery;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;

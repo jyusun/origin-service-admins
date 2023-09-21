@@ -29,8 +29,8 @@ public class SysParamDO extends BaseData {
      * 主键ID
      */
     @Schema(description = "主键编号")
-    @TableId(value = "sid", type = IdType.ASSIGN_ID)
-    private Long sid;
+    @TableId(value = "oid", type = IdType.ASSIGN_ID)
+    private Long oid;
 
     /**
      * 服务编号

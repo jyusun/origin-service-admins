@@ -24,7 +24,7 @@ public class SysRoleTreeDTO extends BaseTreeDTO<SysRoleTreeDTO> implements BaseD
      * 主键编号
      */
     @Schema(description = "主键编号")
-    private Long sid;
+    private Long oid;
 
     /**
      * 名称

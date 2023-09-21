@@ -10,7 +10,7 @@ import java.util.Set;
  */
 public interface SysAuthRepository {
 
-    Set<String> findRoleByUserId(Long sid);
+    Set<String> findRoleByUserId(Long oid);
 
     Set<String> findRsrcPermissionByRoles(Set<String> roles);
 

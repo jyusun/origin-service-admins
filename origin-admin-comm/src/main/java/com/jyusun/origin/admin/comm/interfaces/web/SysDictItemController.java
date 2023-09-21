@@ -1,8 +1,8 @@
 package com.jyusun.origin.admin.comm.interfaces.web;
 
 import com.jyusun.origin.admin.comm.repository.SysDictItemRepository;
-import com.jyusun.origin.base.mybatis.BaseController;
 import com.jyusun.origin.admin.dict.repository.dal.dataobj.SysDictItemDO;
+import com.jyusun.origin.base.mybatis.BaseController;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.RequestMapping;

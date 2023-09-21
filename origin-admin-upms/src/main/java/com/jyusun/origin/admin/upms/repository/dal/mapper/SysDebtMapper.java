@@ -1,10 +1,10 @@
 package com.jyusun.origin.admin.upms.repository.dal.mapper;
 
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import com.jyusun.origin.admin.upms.repository.dal.dataobj.SysDebtDO;
-import com.jyusun.origin.base.mybatis.CoreMapper;
 import com.jyusun.origin.admin.upms.interfaces.facade.model.dto.SysCompDebtDTO;
 import com.jyusun.origin.admin.upms.interfaces.facade.model.qry.SysTreeQuery;
+import com.jyusun.origin.admin.upms.repository.dal.dataobj.SysDebtDO;
+import com.jyusun.origin.base.mybatis.CoreMapper;
 import org.apache.ibatis.annotations.Param;
 
 /**

@@ -4,7 +4,7 @@
 
     <!-- 树模型结果 -->
     <resultMap id="tree_result" type="com.jyusun.origin.admin.upms.interfaces.facade.model.dto.SysDebtTreeValue">
-        <id column="sid" property="sid"/>
+        <id column="oid" property="oid"/>
         <result column="oname" property="oname"/>
         <result column="ocode" property="ocode"/>
         <result column="sname" property="sname"/>
@@ -19,12 +19,12 @@
 
         <collection property="children" javaType="java.util.ArrayList"
                     ofType="com.jyusun.origin.admin.upms.interfaces.facade.model.dto.SysDebtTreeValue"
-                    column="sid" select="listTree"/>
+                    column="oid" select="listTree"/>
     </resultMap>
 
     <!-- 树模型结果 -->
     <resultMap id="comp_debt_result" type="com.jyusun.origin.admin.upms.interfaces.facade.model.dto.SysCompDebtDTO">
-        <id column="sid" property="sid"/>
+        <id column="oid" property="oid"/>
         <result column="oname" property="oname"/>
         <result column="ocode" property="ocode"/>
         <result column="sname" property="sname"/>
@@ -32,7 +32,7 @@
         <result column="tree_type" property="treeType"/>
         <collection property="children" javaType="java.util.ArrayList"
                     ofType="com.jyusun.origin.admin.upms.interfaces.facade.model.dto.SysDebtTreeValue"
-                    column="sid" select="listDebtByComp"/>
+                    column="oid" select="listDebtByComp"/>
     </resultMap>
 
     <!-- 基础列 -->
@@ -45,7 +45,7 @@
         parent_id,
         tenant_id,
         '2' as tree_type,
-        sid,
+        oid,
         update_by,
         update_time,
         remarks
@@ -54,7 +54,7 @@
     <!-- 树形结构查询 -->
     <select id="pageTrees" resultMap="comp_debt_result">
         select
-        tsc.sid,
+        tsc.oid,
         tsc.oname,
         tsc.ocode,
         tsc.sname,
@@ -63,7 +63,7 @@
         from t002_sys_comp tsc
         <where>
             <if test="query.compId != null and query.compId !=0">
-                tsc.sid = #{query.compId}
+                tsc.oid = #{query.compId}
             </if>
         </where>
     </select>
@@ -74,7 +74,7 @@
         <include refid="base_column"/>
         from t001_sys_debt tsd
         <where>
-            tsd.tenant_id = #{sid}
+            tsd.tenant_id = #{oid}
             and tsd.parent_id = 0
         </where>
         order by tsd.sort asc

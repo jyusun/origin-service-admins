@@ -7,23 +7,23 @@
         SELECT tsr.ocode
         from t001_sys_role tsr
 
-        left join t001_rel_role_debt trrd on tsr.sid = trrd.role_id
-        left join t001_sys_debt tsd on trrd.debt_id = tsd.sid
-        left join t001_rel_user_debt trud on tsd.sid = trud.debt_id
+        left join t001_rel_role_debt trrd on tsr.oid = trrd.role_id
+        left join t001_sys_debt tsd on trrd.debt_id = tsd.oid
+        left join t001_rel_user_debt trud on tsd.oid = trud.debt_id
 
-        left join t001_rel_role_group trrg on tsr.sid = trrg.role_id
-        left join t001_sys_ugroup tsug on trrg.group_id = tsug.sid
-        left join t001_rel_user_group trug on tsd.sid = trug.group_id
+        left join t001_rel_role_group trrg on tsr.oid = trrg.role_id
+        left join t001_sys_ugroup tsug on trrg.group_id = tsug.oid
+        left join t001_rel_user_group trug on tsd.oid = trug.group_id
 
-        left join t001_rel_role_post trrp on tsr.sid = trrp.role_id
-        left join t001_sys_post tsp on trrp.post_id = tsp.sid and tsp.enabled = 1
-        left join t001_rel_user_post trup on tsp.sid = trup.post_id
+        left join t001_rel_role_post trrp on tsr.oid = trrp.role_id
+        left join t001_sys_post tsp on trrp.post_id = tsp.oid and tsp.enabled = 1
+        left join t001_rel_user_post trup on tsp.oid = trup.post_id
 
-        left join t001_sys_user tsu on (tsu.sid = trud.uid or tsu.sid = trug.uid or tsu.sid = trup.uid)
+        left join t001_sys_user tsu on (tsu.oid = trud.uid or tsu.oid = trug.uid or tsu.oid = trup.uid)
 
         <where>
             tsr.enabled = 1
-            and tsu.sid = #{userId}
+            and tsu.oid = #{userId}
 
         </where>
     </select>
@@ -32,10 +32,10 @@
     <select id="findRsrcPermissionByRoles" resultType="java.lang.String">
         select tsrsrc.permission
         from t001_sys_resources tsrsrc
-        left join t001_rel_rgroup_rsrc trrgr on trrgr.rsrc_id = tsrsrc.sid
-        left join t001_sys_rgroup tsrg on trrgr.rsrc_id = tsrsrc.sid
-        left join t001_rel_role_rgroup trrr on trrr.rgroup_id = tsrg.sid
-        left join t001_sys_role tsr on tsr.sid = trrr.role_id
+        left join t001_rel_rgroup_rsrc trrgr on trrgr.rsrc_id = tsrsrc.oid
+        left join t001_sys_rgroup tsrg on trrgr.rsrc_id = tsrsrc.oid
+        left join t001_rel_role_rgroup trrr on trrr.rgroup_id = tsrg.oid
+        left join t001_sys_role tsr on tsr.oid = trrr.role_id
 
         <where>
             tsr.enabled = 1

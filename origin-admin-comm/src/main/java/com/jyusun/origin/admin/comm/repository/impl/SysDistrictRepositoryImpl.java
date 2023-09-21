@@ -1,16 +1,16 @@
 package com.jyusun.origin.admin.comm.repository.impl;
 
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.jyusun.origin.admin.comm.interfaces.model.dto.DistrictTreeDTO;
+import com.jyusun.origin.admin.comm.interfaces.model.qry.SysDistrictQuery;
+import com.jyusun.origin.admin.comm.repository.SysDistrictRepository;
+import com.jyusun.origin.admin.comm.repository.dal.dataobj.SysDistrictDO;
+import com.jyusun.origin.admin.comm.repository.dal.mapper.SysDistrictMapper;
 import com.jyusun.origin.base.mybatis.CoreRepositoryImpl;
 import com.jyusun.origin.base.mybatis.common.util.ConditionUtil;
 import com.jyusun.origin.base.mybatis.common.util.PageUtil;
 import com.jyusun.origin.core.common.model.page.PageObject;
 import com.jyusun.origin.core.common.model.page.PageQuery;
-import com.jyusun.origin.admin.comm.repository.dal.dataobj.SysDistrictDO;
-import com.jyusun.origin.admin.comm.repository.SysDistrictRepository;
-import com.jyusun.origin.admin.comm.repository.dal.mapper.SysDistrictMapper;
-import com.jyusun.origin.admin.comm.interfaces.model.dto.DistrictTreeDTO;
-import com.jyusun.origin.admin.comm.interfaces.model.qry.SysDistrictQuery;
 import org.springframework.stereotype.Repository;
 
 /**

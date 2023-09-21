@@ -1,10 +1,10 @@
 package com.jyusun.origin.admin.upms.repository.impl;
 
 import com.google.common.collect.Sets;
-import com.jyusun.origin.core.common.util.CollectionUtil;
-import com.jyusun.origin.core.common.util.ObjectUtil;
 import com.jyusun.origin.admin.upms.repository.SysAuthRepository;
 import com.jyusun.origin.admin.upms.repository.dal.mapper.SysAuthMapper;
+import com.jyusun.origin.core.common.util.CollectionUtil;
+import com.jyusun.origin.core.common.util.ObjectUtil;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
@@ -25,11 +25,11 @@ public class SysAuthRepositoryImpl implements SysAuthRepository {
     private final SysAuthMapper sysAuthMapper;
 
     @Override
-    public Set<String> findRoleByUserId(Long sid) {
-        if (ObjectUtil.isEmpty(sid) || 0L == sid) {
+    public Set<String> findRoleByUserId(Long oid) {
+        if (ObjectUtil.isEmpty(oid) || 0L == oid) {
             return Sets.newHashSet();
         }
-        return sysAuthMapper.findRoleByUserId(sid);
+        return sysAuthMapper.findRoleByUserId(oid);
     }
 
     @Override

@@ -1,9 +1,9 @@
 package com.jyusun.origin.admin.upms.repository.impl;
 
-import com.jyusun.origin.base.mybatis.CoreRepositoryImpl;
-import com.jyusun.origin.admin.upms.repository.dal.dataobj.SysUserPwdHisDO;
 import com.jyusun.origin.admin.upms.repository.SysHisPasswordRepository;
+import com.jyusun.origin.admin.upms.repository.dal.dataobj.SysUserPwdHisDO;
 import com.jyusun.origin.admin.upms.repository.dal.mapper.HisPasswordMapper;
+import com.jyusun.origin.base.mybatis.CoreRepositoryImpl;
 import org.springframework.stereotype.Repository;
 
 /**

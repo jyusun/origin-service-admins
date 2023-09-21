@@ -4,7 +4,7 @@
 
     <!-- 树模型结果 -->
     <resultMap id="tree_result" type="com.jyusun.origin.admin.upms.interfaces.facade.model.dto.SysMenuTreeDTO">
-        <id column="sid" property="sid"/>
+        <id column="oid" property="oid"/>
         <result column="zhname" property="zhname"/>
         <result column="enname" property="enname"/>
         <result column="router" property="router"/>
@@ -55,7 +55,7 @@
         sort,
         menu_code,
         parent_code,
-        sid,
+        oid,
         update_by,
         update_time,
         remarks

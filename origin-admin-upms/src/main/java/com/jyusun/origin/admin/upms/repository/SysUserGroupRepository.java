@@ -1,9 +1,9 @@
 package com.jyusun.origin.admin.upms.repository;
 
-import com.jyusun.origin.admin.upms.repository.dal.dataobj.SysUserGroupDO;
-import com.jyusun.origin.base.mybatis.CoreRepository;
 import com.jyusun.origin.admin.upms.interfaces.facade.model.dto.SysUserGroupDTO;
 import com.jyusun.origin.admin.upms.interfaces.facade.model.qry.UserGroupQuery;
+import com.jyusun.origin.admin.upms.repository.dal.dataobj.SysUserGroupDO;
+import com.jyusun.origin.base.mybatis.CoreRepository;
 
 import java.util.List;
 

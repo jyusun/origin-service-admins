@@ -50,28 +50,28 @@ public class SysDistrictController {
 
     /**
      * 根据ID查询
-     * @param sid {@code Serializable } 主键编号
+     * @param oid {@code Serializable } 主键编号
      * @return {@link AbstractResult} 响应结果
      */
     @Operation(summary = " 数据查询：主键编号", method = "get")
-    @Parameter(name = "sid", description = "主键编号", in = ParameterIn.PATH)
-    @GetMapping("{sid}")
+    @Parameter(name = "oid", description = "主键编号", in = ParameterIn.PATH)
+    @GetMapping("{oid}")
     @ResponseStatus(code = HttpStatus.OK)
-    public SysDistrictDO findById(@PathVariable("sid") Serializable sid) {
-        return this.sysDistrictRepository.getById(sid);
+    public SysDistrictDO findById(@PathVariable("oid") Serializable oid) {
+        return this.sysDistrictRepository.getById(oid);
     }
 
     /**
      * 删除数据
-     * @param sid {@code Serializable} 主键编号
+     * @param oid {@code Serializable} 主键编号
      * @return {@link AbstractResult<Boolean>} 响应结果
      */
     @Operation(summary = "数据删除：主键编号", method = "get")
-    @Parameter(name = "sid", description = "主键编号", in = ParameterIn.PATH)
-    @DeleteMapping("{sid}")
+    @Parameter(name = "oid", description = "主键编号", in = ParameterIn.PATH)
+    @DeleteMapping("{oid}")
     @ResponseStatus(code = HttpStatus.OK)
-    public Boolean removeById(@PathVariable Serializable sid) {
-        return this.sysDistrictRepository.removeById(sid);
+    public Boolean removeById(@PathVariable Serializable oid) {
+        return this.sysDistrictRepository.removeById(oid);
     }
 
     /**
@@ -95,10 +95,10 @@ public class SysDistrictController {
      * @return {@link AbstractResult<Boolean>} 响应结果
      */
     @Operation(summary = "数据更新：主键编号", method = "put")
-    @Parameter(name = "sid", description = "主键编号", in = ParameterIn.PATH)
-    @PutMapping("{sid}")
-    public Boolean updateById(@PathVariable("sid") Long sid, @Validated @RequestBody SysDistrictDO sysDistrictDO) {
-        sysDistrictDO.setSid(sid);
+    @Parameter(name = "oid", description = "主键编号", in = ParameterIn.PATH)
+    @PutMapping("{oid}")
+    public Boolean updateById(@PathVariable("oid") Long oid, @Validated @RequestBody SysDistrictDO sysDistrictDO) {
+        sysDistrictDO.setOid(oid);
         return this.sysDistrictRepository.updateById(sysDistrictDO);
     }
 

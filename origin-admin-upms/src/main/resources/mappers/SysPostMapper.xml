@@ -4,7 +4,7 @@
 
     <!-- 树模型结果 -->
     <resultMap id="tree_result" type="com.jyusun.origin.admin.upms.interfaces.facade.model.dto.SysPostTreeDTO">
-        <id column="sid" property="sid"/>
+        <id column="oid" property="oid"/>
         <result column="zhname" property="zhname"/>
         <result column="enname" property="enname"/>
         <result column="sort" property="sort"/>
@@ -16,7 +16,7 @@
 
         <collection property="children" javaType="java.util.ArrayList"
                     ofType="com.jyusun.origin.admin.upms.interfaces.facade.model.dto.SysPostTreeDTO"
-                    column="sid" select="listTree"/>
+                    column="oid" select="listTree"/>
     </resultMap>
 
     <!-- 基础列 -->
@@ -27,7 +27,7 @@
         sort,
         parent_id,
         tenant_id,
-        sid,
+        oid,
         update_by,
         update_time
     </sql>

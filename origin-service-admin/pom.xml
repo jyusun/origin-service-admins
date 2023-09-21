@@ -10,7 +10,6 @@
     </parent>
 
     <artifactId>origin-service-admin</artifactId>
-    <version>${project.parent.version}</version>
     <name>${project.artifactId}</name>
     <packaging>jar</packaging>
     <description>基础信息-启动类</description>

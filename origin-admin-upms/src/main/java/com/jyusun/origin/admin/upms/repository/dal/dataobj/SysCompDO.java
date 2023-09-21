@@ -29,8 +29,8 @@ public class SysCompDO extends BaseData {
      * 主键ID
      */
     @Schema(description = "主键编号")
-    @TableId(value = "sid", type = IdType.ASSIGN_ID)
-    private Long sid;
+    @TableId(value = "oid", type = IdType.ASSIGN_ID)
+    private Long oid;
 
     @Schema(description = "社会信用编号")
     @TableField("comp_code")

@@ -1,13 +1,13 @@
 package com.jyusun.origin.admin.upms.interfaces.web;
 
+import com.jyusun.origin.admin.upms.interfaces.facade.model.dto.SysCompDebtDTO;
+import com.jyusun.origin.admin.upms.interfaces.facade.model.qry.SysTreeQuery;
+import com.jyusun.origin.admin.upms.repository.SysDebtRepository;
+import com.jyusun.origin.admin.upms.repository.dal.dataobj.SysDebtDO;
 import com.jyusun.origin.core.common.model.page.PageObject;
 import com.jyusun.origin.core.common.model.page.PageQuery;
 import com.jyusun.origin.core.common.model.result.AbstractResult;
 import com.jyusun.origin.core.common.model.result.ResultFactory;
-import com.jyusun.origin.admin.upms.repository.dal.dataobj.SysDebtDO;
-import com.jyusun.origin.admin.upms.repository.SysDebtRepository;
-import com.jyusun.origin.admin.upms.interfaces.facade.model.dto.SysCompDebtDTO;
-import com.jyusun.origin.admin.upms.interfaces.facade.model.qry.SysTreeQuery;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
@@ -49,26 +49,26 @@ public class SysDebtController {
 
     /**
      * 根据ID查询
-     * @param sid {@code Serializable } 主键编号
+     * @param oid {@code Serializable } 主键编号
      * @return {@link AbstractResult} 响应结果
      */
     @Operation(summary = "数据查询：主键编号")
-    @GetMapping("{sid}")
+    @GetMapping("{oid}")
     @ResponseStatus(code = HttpStatus.OK)
-    public SysDebtDO findById(@PathVariable("sid") Serializable sid) {
-        return this.sysDebtRepository.getById(sid);
+    public SysDebtDO findById(@PathVariable("oid") Serializable oid) {
+        return this.sysDebtRepository.getById(oid);
     }
 
     /**
      * 删除数据
-     * @param sid {@code Serializable} 主键编号
+     * @param oid {@code Serializable} 主键编号
      * @return {@link AbstractResult<Boolean>} 响应结果
      */
     @Operation(summary = "数据删除：主键编号")
-    @DeleteMapping("{sid}")
+    @DeleteMapping("{oid}")
     @ResponseStatus(code = HttpStatus.OK)
-    public Boolean removeById(@PathVariable("sid") Serializable sid) {
-        return this.sysDebtRepository.removeById(sid);
+    public Boolean removeById(@PathVariable("oid") Serializable oid) {
+        return this.sysDebtRepository.removeById(oid);
     }
 
     /**
@@ -92,9 +92,9 @@ public class SysDebtController {
      * @return {@link AbstractResult<Boolean>} 响应结果
      */
     @Operation(summary = "数据更新：主键编号")
-    @PutMapping("{sid}")
-    public Boolean updateById(@PathVariable("sid") Long sid, @Validated @RequestBody SysDebtDO sysDebtDO) {
-        sysDebtDO.setSid(sid);
+    @PutMapping("{oid}")
+    public Boolean updateById(@PathVariable("oid") Long oid, @Validated @RequestBody SysDebtDO sysDebtDO) {
+        sysDebtDO.setOid(oid);
         return this.sysDebtRepository.updateById(sysDebtDO);
     }
 
