@@ -31,8 +31,8 @@ public class SysUserDO extends BaseTenant {
      * 主键ID
      */
     @Schema(description = "主键编号")
-    @TableId(value = "oid", type = IdType.ASSIGN_ID)
-    private Long oid;
+    @TableId(value = "uid", type = IdType.ASSIGN_ID)
+    private Long uid;
 
     @Schema(description = "账户编号")
     @TableField("user_code")

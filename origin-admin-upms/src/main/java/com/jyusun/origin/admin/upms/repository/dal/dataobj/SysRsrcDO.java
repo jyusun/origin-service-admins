@@ -31,8 +31,9 @@ public class SysRsrcDO extends BaseData {
      * 主键ID
      */
     @Schema(description = "主键编号")
-    @TableId(value = "oid", type = IdType.ASSIGN_ID)
+    @TableId(value = "oid", type = IdType.AUTO)
     private Long oid;
+
 
     @Schema(description = "名称")
     @TableField("oname")

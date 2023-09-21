@@ -33,8 +33,9 @@ public class SysMenuDO extends BaseData {
      * 主键ID
      */
     @Schema(description = "主键编号")
-    @TableId(value = "oid", type = IdType.ASSIGN_ID)
+    @TableId(value = "oid", type = IdType.AUTO)
     private Long oid;
+
 
     /**
      * 菜单类型;1-目录|2-菜单|3-按钮
